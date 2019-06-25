@@ -1,0 +1,42 @@
+version: '3.3'
+
+services:
+  db:
+    image: "mysql:${MYSQL_VERSION}"
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - database:/var/lib/mysql
+    restart: unless-stopped
+    networks: 
+      - web
+    env_file: 
+      - .env
+    labels: 
+      - "traefik.enable=false"
+  wordpress:
+    depends_on:
+      - db
+    image: "wordpress:${WORDPRESS_VERSION}"
+    networks: 
+      - web
+    volumes:
+      - ./wordpress:/var/www/html/wp-content
+      - ./apache.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./.htaccess:/var/www/html/.htaccess
+    restart: unless-stopped
+    env_file: 
+      - .env
+    labels:
+      - "traefik.front.frontend.rule=Host:${HOST};PathPrefix:/backend"
+      - "traefik.port=80"
+      - "traefik.enable=true"
+      - "traefik.passHostHeader=true"
+      - "traefik.frontend.entryPoints=http,https"
+      - "traefik.tags=${HOST}"
+
+volumes:
+  database:
+
+networks: 
+  web:
+    external: true
