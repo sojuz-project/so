@@ -1,0 +1,144 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.hero-block {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px; }
+  .hero-block h5 {
+    margin: 0;
+    font-weight: 400; }
+
+.block-group {
+  border: 1px dashed #666;
+  padding: 5px;
+  margin-bottom: 10px; }
+
+.slider {
+  min-height: 200px; }
+
+.center {
+  display: block;
+  margin: 0 auto; }
+
+.right {
+  margin-left: auto;
+  margin-right: 0;
+  display: block; }
+
+.slide-element {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  min-height: 200px; }
+
+ul.slider-list {
+  min-height: 200px !important; }
+
+.slide-image {
+  position: relative;
+  padding-left: 5px; }
+  .slide-image.image-empty {
+    background: #dedede;
+    margin-left: 5px;
+    margin-bottom: 5px; }
+    .slide-image.image-empty > button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
+
+.slide-image img + button {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 150ms linear;
+  -o-transition: all 150ms linear;
+  transition: all 150ms linear; }
+
+.slide-image:hover button {
+  opacity: 1; }
+
+.default-button {
+  font-size: 12px;
+  background-color: #fff;
+  border: 1px solid #9a9a9a;
+  padding: 5px 10px 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 1px #3a3a3a;
+          box-shadow: 0 1px 1px #3a3a3a;
+  background-color: white; }
+
+.default-button:hover {
+  background: #0073a1; }
+
+.button-red {
+  border-bottom: 2px solid #cc3700;
+  background: orangered;
+  margin-bottom: 10px; }
+  .button-red:hover {
+    background: #e63e00; }
+
+.block-id {
+  -ms-flex: 1;
+      flex: 1;
+  font-size: 12px;
+  font-weight: 600; }
+
+.smalltext {
+  border: 1px solid #666;
+  padding: 3px;
+  background-color: #ffffff50;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  font-size: 12px; }
+
+.richtext {
+  border: 1px solid #666;
+  padding: 5px;
+  background-color: #ffffff50;
+  border-radius: 5px;
+  margin-bottom: 10px; }
+
+.pickers-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  -ms-flex-align: baseline;
+      align-items: baseline; }
+
+.color-picker-pin {
+  font-size: 12px;
+  background-color: #fff;
+  border: 1px solid #9a9a9a;
+  padding: 1px 1px 1px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 1px #3a3a3a;
+          box-shadow: 0 1px 1px #3a3a3a;
+  background-color: white; }
+
+.color-picker-pin span:first-of-type {
+  padding: 3px;
+  display: inline-block;
+  width: 60px;
+  font-size: 11px; }
+
+.components-color-palette__item-wrapper {
+  width: auto; }

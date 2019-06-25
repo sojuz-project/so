@@ -1,0 +1,9 @@
+{
+  "name": "common-components",
+  "version": "1.0.0",
+  "dependencies": {
+    "@wordpress/components": "^7.4.0",
+    "nuka-carousel": "^4.5.8",
+    "react-tooltip": "^3.10.0"
+  }
+}
