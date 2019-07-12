@@ -1,0 +1,173 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+ @import '../../../common-components/common-block.scss';
+
+ .list-block {
+
+	&.big{
+		.thumb{
+			overflow: hidden;
+			img{
+				min-width:120%;
+				margin-left: -10%;
+				margin-right: -10%;
+			}
+		}
+	}
+	&.small{
+		img{
+				max-width:50%;
+				margin-left: 25%;
+				margin-right: 25%;
+			}
+	}
+	&.micro{
+		img{
+				max-width:20%;
+				margin-left: 40%;
+				margin-right: 40%;
+			}
+	}
+
+	&.center{
+		.editor-rich-text{
+			text-align: center;
+		}
+	}
+
+	&.default{
+		.list-element{
+			display: grid;
+			grid-template-rows: auto;
+			grid-template-columns: auto;
+			grid-template-areas:
+				"group-title"
+				"group-thumb"
+				"group-excerpt"
+				"group-remove"
+		}
+	}
+	&.default-compact{
+		.list-element{
+			margin: 10px 0 20px;
+			display: grid;
+			grid-gap: 5px;
+			grid-template-rows: auto;
+			grid-template-columns: 33.3% auto;
+			grid-template-areas:
+				"group-thumb group-title"
+				"group-thumb group-excerpt"
+				"group-remove group-remove";
+		}
+	}
+	&.horizontal-2{
+		.list-group{
+			margin: 10px 0 20px;
+			grid-gap:15px;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			.list-element{
+				margin: 10px 0 5px;
+			}
+		}
+		.block-group{
+			&.title{
+				font-size:1.1em;
+			}
+			&.excerpt{
+				font-size:1em;
+			}
+			&.content{
+				font-size:0.9em;
+			}
+		}
+	}
+	&.horizontal-3{
+		.list-group{
+			margin: 10px 0 20px;
+			grid-gap:15px;
+			display: grid;
+    	grid-template-columns: repeat(3, 1fr);
+		}
+		.block-group{
+			&.title{
+				font-size:0.9em;
+			}
+			&.excerpt{
+				font-size:0.8em;
+			}
+			&.content{
+				font-size:0.7em;
+			}
+		}
+	}
+	&.horizontal-4{
+		.list-group{
+			margin: 10px 0 20px;
+			grid-gap:15px;
+			display: grid;
+			grid-auto-flow: initial;
+    	grid-template-columns: repeat(4, 1fr);
+		}
+		.block-group{
+			&.title{
+				font-size:0.7em;
+			}
+			&.excerpt{
+				font-size:0.6em;
+			}
+			&.content{
+				font-size:0.5em;
+			}
+		}
+	}
+
+	&.horizontal{
+		display: grid;
+		grid-template-rows: auto;
+		grid-template-columns: auto auto;
+		grid-template-areas:
+			"main-pickers main-pickers"
+			"group-title group-title"
+			"group-thumb group-content"
+			"group-excerpt group-content";
+	}
+
+	&.horizontal-revers{
+		display: grid;
+		grid-template-rows: auto;
+		grid-template-columns: auto auto;
+	  grid-template-areas:
+			"main-pickers main-pickers"
+			"group-title group-title"
+			"group-content group-thumb"
+			"group-content group-excerpt ";
+	}
+
+	&.compact{
+		display: grid;
+		grid-template-rows: auto;
+		grid-template-columns: auto auto;
+		grid-template-areas:
+			"main-pickers main-pickers"
+			"group-title group-thumb"
+			"group-excerpt group-thumb"
+			"group-excerpt group-content";
+	}
+
+	&.compact-revers{
+		display: grid;
+		grid-template-rows: auto;
+		grid-template-columns: auto auto;
+		grid-template-areas:
+			"main-pickers main-pickers"
+			"group-thumb group-title"
+			"group-thumb group-excerpt"
+			"group-content group-excerpt";
+	}
+
+  
+}

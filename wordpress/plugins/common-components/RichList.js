@@ -33,57 +33,70 @@ class RichList extends React.Component {
 		const { newSlide, removeSlide, updateSlide } = this;
 
 		return (
-			<div className="block-group slider">
-				<button className="default-button" onClick={newSlide}>
-					Add list element +
-				</button>
-
-				{richList.length > 0 && richList.map((el = {}) => (
-					<React.Fragment key={el.id}>
-						<div className="rlist-element">
-							<div>
-								<RichText
-									className="smalltext"
-									placeholder="Insert list title"
-									value={el.content}
-									onChange={content => updateSlide(el.id, { content })}
-								/>
-
-								{withDescription && (
+			<div>
+			
+				<div className="list-group">
+					{richList.length > 0 && richList.map((el = {}) => (
+						<div className="list-element" key={el.id}>
+								<div className="block-group title">
+									<div className="extend-pickers-group">
+										<div className="group-title">Title</div>
+									</div>
 									<RichText
-										className="smalltext"
-										placeholder="Insert list description"
-										value={el.description}
-										onChange={description => updateSlide(el.id, { description })}
+										className="text"
+										placeholder="Insert list title"
+										value={el.content}
+										onChange={content => updateSlide(el.id, { content })}
 									/>
+								</div>
+								{withDescription && (
+									<div className="block-group excerpt">
+										<div className="extend-pickers-group">
+											<div className="group-title">Excerpt</div>
+										</div>
+										<RichText
+											className="text"
+											placeholder="Insert list description"
+											value={el.description}
+											onChange={description => updateSlide(el.id, { description })}
+										/>
+									</div>
 								)}
-								<button className="default-button button-red" onClick={removeSlide(el.id)}>
-									Remove current list element
-								</button>
-							</div>
-
-							<div className={`slide-image ${el.image ? '' : 'image-empty'}`}>
-								{el.image && (
-									<img src={el.image.url} alt={el.alt} />
-								)}
-
-								<MediaUploadCheck>
-									<MediaUpload
-										allowedTypes={['image']}
-										onSelect={image => updateSlide(el.id, { image })}
-										render={function({ open }) {
-											return (
-												<button className="default-button" onClick={open}>
-													{el.image ? 'Change image' : 'Choose image'}
-												</button>
-											);
-										}}
-									/>
-								</MediaUploadCheck>
-							</div>
+								<div 
+									className={`block-group thumb ${el.image ? '' : 'image-empty'}`}
+								>
+									<div className="extend-pickers-group">
+										<div className="group-title">Thumbnail</div>
+									</div>
+									{el.image && (
+										<img src={el.image.url} alt={el.alt} />
+									)}
+									<MediaUploadCheck>
+										<MediaUpload
+											allowedTypes={['image']}
+											onSelect={image => updateSlide(el.id, { image })}
+											render={function({ open }) {
+												return (
+													<button className="default-button" onClick={open}>
+														{el.image ? 'Change image' : 'Choose image'}
+													</button>
+												);
+											}}
+										/>
+									</MediaUploadCheck>
+								</div>
+								<div className="remove">
+									<button className="default-button button-remove" onClick={removeSlide(el.id)}>
+										[X] Remove element
+									</button>
+								</div>
+								
 						</div>
-					</React.Fragment>
-				))}
+					))}
+				</div>
+				<button className="default-button button-add" onClick={newSlide}>
+					Add element +
+				</button>
 			</div>
 		);
 	}

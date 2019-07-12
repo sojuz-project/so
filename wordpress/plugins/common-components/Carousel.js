@@ -3,18 +3,18 @@ import NukaCarousel from 'nuka-carousel';
 
 const { RichText, MediaUpload, MediaUploadCheck } = wp.editor;
 
-const updateGalleryById = (gallery = [], id, toUpdate) => gallery.map(el => el.id === id ? ({ ...el, ...toUpdate }) : el);
+const updateGalleryById = (richList = [], id, toUpdate) => richList.map(el => el.id === id ? ({ ...el, ...toUpdate }) : el);
 
 const config = {
 	attrs: {
-		gallery: {
+		richList: {
 			type: 'array',
 		},
 	},
 	getAttrs: ({
 		setAttributes,
-		attributes: { gallery = [] } = {},
-	} = {}) => ({ gallery, setAttributes }),
+		attributes: { richList = [] } = {},
+	} = {}) => ({ richList, setAttributes }),
 };
 
 class Carousel extends React.Component {
@@ -25,41 +25,42 @@ class Carousel extends React.Component {
 	goToSlide = slideIndex => this.setState({ slideIndex });
 
 	newSlide = () => {
-		const { gallery, setAttributes } = this.props;
+		const { richList, setAttributes } = this.props;
 
-		setAttributes({ gallery: [...gallery, { id: gallery.length }] });
-		this.goToSlide(gallery.length);
+		setAttributes({ richList: [...richList, { id: richList.length }] });
+		this.goToSlide(richList.length);
 	}
 
-	removeSlide = slideId => () => this.props.setAttributes({ gallery: this.props.gallery.filter(({ id }) => id !== slideId) });
+	removeSlide = slideId => () => this.props.setAttributes({ richList: this.props.richList.filter(({ id }) => id !== slideId) });
 
-	updateSlide = (slideId, updateObj) => this.props.setAttributes({ gallery: updateGalleryById(this.props.gallery, slideId, updateObj) });
+	updateSlide = (slideId, updateObj) => this.props.setAttributes({ richList: updateGalleryById(this.props.richList, slideId, updateObj) });
 
 	render() {
-		const { gallery = [], withDescription = true } = this.props;
+		const { richList = [], withDescription = true } = this.props;
 		const { goToSlide, newSlide, removeSlide, updateSlide } = this;
 
 		return (
-			<div className="block-group slider">
+			<div>
 				<button className="default-button" onClick={newSlide}>
 					Add slide +
 				</button>
 
-				{gallery.length > 0 && (
+				{richList.length > 0 && (
 					<NukaCarousel
 						slideIndex={this.state.slideIndex}
 						afterSlide={goToSlide}
 						renderCenterLeftControls={() => null}
 						renderCenterRightControls={() => null}
 					>
-						{gallery.map((el = {}) => (
+						{richList.map((el = {}) => (
 							<React.Fragment key={el.id}>
 								
 
 								<div className="slide-element">
 									<div>
 										<RichText
-											className="smalltext"
+											isolate={true}
+											className="text"
 											placeholder="Insert slide title"
 											value={el.content}
 											onChange={content => updateSlide(el.id, { content })}
@@ -67,7 +68,8 @@ class Carousel extends React.Component {
 
 										{withDescription && (
 											<RichText
-												className="smalltext"
+												isolate={true}
+												className="text"
 												placeholder="Insert slide description"
 												value={el.description}
 												onChange={description => updateSlide(el.id, { description })}

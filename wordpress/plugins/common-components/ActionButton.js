@@ -21,16 +21,15 @@ const ActionButton = ({
 	placeholder = 'Insert action button text',
 	setAttributes = () => null,
 }) => (
-	<div className="block-group">
-		<h5>Call to action</h5>
+	<div>
 		<RichText
-			className="smalltext"
+			className="text"
 			placeholder={placeholder}
 			value={actionButtonLabel}
 			onChange={newContent => setAttributes({ actionButtonLabel: newContent })}
 		/>
 		<RichText
-			className="smalltext"
+			className="text"
 			placeholder={placeholder}
 			value={actionButtonTarget}
 			onChange={newContent => setAttributes({ actionButtonTarget: newContent })}

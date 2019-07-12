@@ -1,0 +1,76 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+ @import '../../../common-components/common-block.scss';
+
+ .content-block {
+
+	&.default{
+		grid-template-rows: auto;
+		grid-template-columns: auto;
+		grid-template-areas:
+			"main-pickers"
+			"group-title"
+			"group-thumb"
+			"group-excerpt"
+			"group-content";
+	}
+
+	&.default-revers{
+		grid-template-rows: auto;
+		grid-template-columns: auto;
+		grid-template-areas:
+			"main-pickers"
+			"group-thumb"
+			"group-title"
+			"group-excerpt"
+			"group-content";
+	}
+
+	&.horizontal{
+		display: grid;
+		grid-template-rows: auto;
+		grid-template-columns: auto auto;
+		grid-template-areas:
+			"main-pickers main-pickers"
+			"group-title group-title"
+			"group-thumb group-content"
+			"group-excerpt group-content";
+	}
+
+	&.horizontal-revers{
+		display: grid;
+		grid-template-rows: auto;
+		grid-template-columns: auto auto;
+	  grid-template-areas:
+			"main-pickers main-pickers"
+			"group-title group-title"
+			"group-content group-thumb"
+			"group-content group-excerpt ";
+	}
+
+	&.compact{
+		display: grid;
+		grid-template-rows: auto;
+		grid-template-columns: auto auto;
+		grid-template-areas:
+			"main-pickers main-pickers"
+			"group-title group-thumb"
+			"group-excerpt group-thumb"
+			"group-excerpt group-content";
+	}
+
+	&.compact-revers{
+		display: grid;
+		grid-template-rows: auto;
+		grid-template-columns: auto auto;
+		grid-template-areas:
+			"main-pickers main-pickers"
+			"group-thumb group-title"
+			"group-thumb group-excerpt"
+			"group-content group-excerpt";
+  }
+  
+}

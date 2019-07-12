@@ -1,0 +1,276 @@
+@import './common-block-variables.scss';
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+ .wp-block{
+	 	max-width:70% !important
+ }
+.sojuz-block {
+	font-family: Arial, Helvetica, sans-serif;
+	padding:0 5px 20px;
+	grid-gap: 15px;
+
+	/* main css */
+	.main-pickers-group{
+		grid-area: main-pickers;
+		display:flex;
+		justify-content: flex-end;
+		align-items: baseline;
+		background-color: #fff;
+		margin: 0 -5px;
+		padding: 0 5px;
+
+		.block-id{
+			color: black;
+			padding-left: 5px; 
+			background-color: #fff;
+			align-self: stretch;
+			flex: 1;
+			font-size:12px;
+			font-weight: 600;
+		}
+
+		select{
+			font-size: 12px;
+			height:28px;
+		}
+	}
+
+	.block-group {
+		border:0;
+		border-top: 1px solid #ddd;
+		margin: 0;
+		padding: 0;
+
+		.extend-pickers-group{
+			display:flex;
+			justify-content: flex-end;
+			align-items: center;
+			background-color: #f1f1f1;
+			padding: 2px;
+			border-radius: 0;
+			margin-bottom: 3px;
+
+			.group-title{
+				flex:1;
+				color:#444;
+				font-size:12px;
+				padding-left:3px;
+				text-shadow: 1px 0px 1px #ffffff78;
+				font-weight: bold;
+			}
+
+			select{
+				font-size: 12px;
+				height:28px;
+				margin-bottom:-1px;
+			}
+		}
+		
+		&.title {
+			grid-area: group-title;
+			.text{
+				font-size: 2em;
+				line-height: 1.1em;
+			}
+			.left{
+				text-align:left;
+			}
+			.center{
+				text-align:center;
+			}
+		}
+
+		&.excerpt {
+			grid-area: group-excerpt;
+			.text{
+				font-size: 1.25em;
+				line-height: 1.3em;
+			}
+			.left{
+				text-align:left;
+			}
+			.center{
+				text-align:center;
+			}
+		}
+
+		&.content {
+			grid-area: group-content;
+			.text{
+				font-size: 0.95em;
+				line-height: 1.25em;
+			}
+			.left{
+				text-align:left;
+			}
+			.center{
+				text-align:center;
+			}
+		}
+
+		&.thumb{
+			grid-area: group-thumb;
+			border: 1px solid #b1b1b1;
+			.big{
+				overflow: hidden;
+				img{
+					min-width:120%;
+					margin-left: -10%;
+					margin-right: -10%;
+				}
+			}
+			.small{
+				img{
+					max-width:50%;
+					margin-left: 25%;
+					margin-right: 25%;
+				}
+			}
+			.micro{
+				img{
+					max-width:20%;
+					margin-left: 40%;
+					margin-right: 40%;
+				}
+			}
+		}
+	}
+	.remove{
+		grid-area: group-remove;
+	}
+	
+	.text{
+		background-color: #ffffff50;
+		text-overflow: ellipsis;
+		border: 1px solid #d0d0d0;
+		padding: 5px;
+		margin: 0px;
+		border-radius: 5px;
+		margin-bottom:2px;
+	}
+
+	.color-picker-pin{
+		display:flex;
+    background-color: #fff;
+    border: 1px solid #b1b1b1;
+    border-radius: 3px;
+    box-shadow: none;;
+		margin-right: 1px;
+		color:#444;
+		.innerText{
+			color: #444;
+			align-self: center;
+		}
+		.color-marker{
+			padding: 6px;
+			display: inline-block;
+			width: 60px;
+			font-size:11px;
+			border-radius: 3px;
+			box-shadow: inset 0 1px 1px #00000029;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+.carousel{
+	min-height:200px;
+	width:100%;
+}
+.center {
+	display: block;
+	margin: 0 auto;
+}
+.right {
+	margin-left: auto;
+	margin-right: 0;
+	display: block;
+}
+.slide-element {
+	display: grid;
+	grid-template-columns: 0.7fr 1fr;
+	min-height: 200px;
+}
+ul.slider-list {
+	min-height: 200px !important;
+}
+.slide-image {
+	position: relative;
+	padding-left: 5px;
+	margin:1px;
+
+	&.image-empty {
+		background: $gray;
+		margin-left: 5px;
+    margin-bottom: 5px;
+
+		& > button {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+}
+.slide-image img + button {
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: all 150ms linear;
+}
+.slide-image:hover button {
+	opacity: 1;
+}
+.default-button {
+	display: flex;
+  background-color: rgb(231, 231, 231);
+  border: 1px solid #b1b1b1;
+  border-radius: 3px;
+  box-shadow: none;
+  margin-right: 1px;
+  color: #444;
+	width:100%;	
+	font-size: 12px;
+	height: 32px;
+	box-sizing: border-box;
+	box-shadow: inset 0 -1px 0 #ccc;
+	margin-top:3px;
+}
+.default-button:hover {
+	background: #666;
+	color:#fff;
+	box-shadow: inset 0 -1px 0 #000;
+	cursor: pointer;
+}
+.block-group{
+	.default-button{
+		margin:5px;
+		width:calc(100% - 10px);	
+	}
+}
+.button-remove{
+	  background-color: #d43a35;
+    color: #fff;
+    box-shadow: inset 0 -1px 1px #4c0505;
+}
+.button-add{
+	  background-color: #6ba23b;
+    color: #fff;
+    box-shadow: inset 0 -1px 1px #396328;
+}
+
+.components-color-palette__item-wrapper{
+	width:auto;
+}

@@ -11,13 +11,11 @@ const config = {
     attributes: { thumbImage } = {},
   } = {}) => ({ thumbImage, setAttributes }),
 };
-
 const ThumbImage = ({
   thumbImage,
   setAttributes
 }) => (
     <div>
-      ThumbImage
       {thumbImage && (
         <img src={thumbImage.url} />
       )}
