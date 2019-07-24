@@ -2,7 +2,7 @@
 
 This is the stack component of the sojuz project. It contains such services as:
  * MySQL database
- * WordPress CMS (`/backend`)
+ * WordPress CMS (`/backend/wp-admin/`)
  * Traefik router (<sup>override</sup>, `/router`)
  * phpMyAdmin (<sup>override</sup>, `:8888`)
 
@@ -30,9 +30,10 @@ This is the stack component of the sojuz project. It contains such services as:
     ```
     The output may contain vital information about what's wrong if anything
  5. Visit https://docker.local/backend accept the self signed SSL certificate and install WordPress. The database will already be configured for you.
- 6. Navigate to [Plugins](https://docker.local/backend/wp-admin/plugins.php) page and enable all plugins wth `CGB Gutenberg Block Plugin` in their name.
+ 6. Navigate to [Plugins](https://docker.local/backend/wp-admin/plugins.php) page and enable all plugins wth `SOJUZ Gutenberg Block Plugin` in their name.
  7. Set static home page in WordPress Settings -> [Reading](https://docker.local/backend/wp-admin/options-reading.php)
- 8. Setup your theme using Apearance -> [Custtomize](https://docker.local/backend/wp-admin/customize.php?return=%2Fbackend%2Fwp-admin%2Foptions-reading.php)
+ 8. Visit [Themes](https://docker.local/backend/wp-admin/themes.php) page and activate `zero` theme 
+ 9. Setup your theme using Apearance -> [Custtomize](https://docker.local/backend/wp-admin/customize.php?return=%2Fbackend%2Fwp-admin%2Foptions-reading.php)
 
 ## Running
 To startup the stack issue appropriate docker-compose command such as:
