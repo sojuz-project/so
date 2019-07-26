@@ -34,6 +34,11 @@ This is the stack component of the sojuz project. It contains such services as:
  7. Set static home page in WordPress Settings -> [Reading](https://docker.local/backend/wp-admin/options-reading.php)
  8. Visit [Themes](https://docker.local/backend/wp-admin/themes.php) page and activate `zero` theme 
  9. Setup your theme using Apearance -> [Custtomize](https://docker.local/backend/wp-admin/customize.php?return=%2Fbackend%2Fwp-admin%2Foptions-reading.php)
+ 10. To make uploads work execute following commands:
+     ```
+     chown :www-data wordpress/uploads
+     chmod 775 wordpress/uploads
+     ```
 
 ## Running
 To startup the stack issue appropriate docker-compose command such as:
