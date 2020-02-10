@@ -14,7 +14,7 @@
  */
 function zero_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'header_color' , array(
-		'default' => '#E93558',
+		'default' => '',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
@@ -26,9 +26,115 @@ function zero_customize_register( $wp_customize ) {
 			'section'    => 'title_tagline',
 		) ) );
 
+		// -----------------------------------------------------------------------
+			$wp_customize->add_setting( 'footer_template' , array(
+			'default'           => '',
+			'sanitize_callback' => 'absint'
+		)  );
+		// https://codex.wordpress.org/Class_Reference/WP_Customize_Control
+		$wp_customize->add_control(
+			'footer_template', 
+			array(
+				'label'    => __( 'Footer template', 'zero' ),
+				'section'  => 'title_tagline',
+				'settings' => 'footer_template',
+				'type'     => 'dropdown-pages',
+			)
+		);
+	
+			// -----------------------------------------------------------------------
+		$wp_customize->add_setting( 'header_template' , array(
+			'default'           => '',
+			'sanitize_callback' => 'absint'
+		)  );
+		// https://codex.wordpress.org/Class_Reference/WP_Customize_Control
+		$wp_customize->add_control(
+			'header_template', 
+			array(
+				'label'    => __( 'Header template', 'zero' ),
+				'section'  => 'title_tagline',
+				'settings' => 'header_template',
+				'type'     => 'dropdown-pages',
+			)
+		);
+	
+		// -----------------------------------------------------------------------
+		$wp_customize->add_setting( 'elements_align' , array(
+			'align-default' => 'Align default',
+		) );
+		// https://codex.wordpress.org/Class_Reference/WP_Customize_Control
+		$wp_customize->add_control(
+			'elements_align', 
+			array(
+				'label'    => __( 'Align header elements', 'zero' ),
+				'section'  => 'title_tagline',
+				'settings' => 'elements_align',
+				'type'     => 'radio',
+				'choices'  => array(
+					'align-default'  => __('Align default', 'zero'),
+					'align-full' => __('Align full', 'zero'),
+					'align-wide' => __('Align wide', 'zero'),
+				),
+			)
+		);
+		// -----------------------------------------------------------------------
+		
+		// -----------------------------------------------------------------------
+		$wp_customize->add_setting( 'display_mode' , array(
+			'align-default' => 'Align default',
+		) );
+		// https://codex.wordpress.org/Class_Reference/WP_Customize_Control
+		$wp_customize->add_control(
+			'display_mode', 
+			array(
+				'label'    => __( 'Header display mode', 'zero' ),
+				'section'  => 'title_tagline',
+				'settings' => 'display_mode',
+				'type'     => 'radio',
+				'choices'  => array(
+					'absolute-mode'  => __('Absolute', 'zero'),
+					'sticky-mode' => __('Sticky', 'zero'),
+					'fixed-mode' => __('Fixed', 'zero'),
+				),
+			)
+		);
+		// -----------------------------------------------------------------------
+		$wp_customize->add_setting('background_image', array(
+			'default' => '',
+			'type' => 'theme_mod',
+			'capability' => 'edit_theme_options',
+		));
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control_one', array(
+			'label' => __( 'Background image', 'zero' ),
+			'section' => 'title_tagline',
+			'settings' => 'background_image',
+			))
+		);
 
+		// -----------------------------------------------------------------------
+		$wp_customize->add_setting( 'background_class' , array(
+			'cover-fixed' => 'Contain top',
+		) );
+		// https://codex.wordpress.org/Class_Reference/WP_Customize_Control
+		$wp_customize->add_control(
+			'display_mode', 
+			array(
+				'label'    => __( 'Background class', 'zero' ),
+				'section'  => 'title_tagline',
+				'settings' => 'background_class',
+				'type'     => 'radio',
+				'choices'  => array(
+					'contain-top'  => __('Contain top', 'zero'),
+					'contain-bottom' => __('Contain bottom', 'zero'),
+					'cover-fixed' => __('Cover fixed', 'zero'),
+					'pattern' => __('Pattern tiles', 'zero'),
+				),
+			)
+		);
 
+		// --
 
+		
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -105,3 +211,12 @@ function zero_sanitize_color_option( $choice ) {
 
 	return 'default';
 }
+
+function action_customize_save_after( $array ) { 
+	set_theme_mod('header_template_slug', get_post_field( 'post_name', get_theme_mod('header_template') ));
+	set_theme_mod('footer_template_slug', get_post_field( 'post_name', get_theme_mod('footer_template') ));
+	die();
+}; 
+         
+// add the action 
+add_action( 'customize_save_after', 'action_customize_save_after', 10, 1 ); 

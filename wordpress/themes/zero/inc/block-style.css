@@ -1,0 +1,40 @@
+.is-style-f-col-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
+ .is-style-f-col-3 > *{
+  width: calc(50% - 1.3vw);
+  flex: 0 0 calc(50% - 1.3vw);
+ }
+
+ .is-style-f-col-3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
+ .is-style-f-col-4 > *{
+  width: calc(50% - 1.3vw);
+  flex: 0 0 calc(50% - 1.3vw);
+ }
+
+ .is-style-f-col-4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
+ .is-style-f-col-2 > *{
+  width: calc(50% - 1.3vw);
+  flex: 0 0 calc(50% - 1.3vw);
+ }
+
+.is-style-padding-5precent > *{
+   padding:0 5%;
+}
+
+.is-style-cover-15 {
+   padding:20vw 0;
+}
+.is-style-cover-10 {
+   padding:15vw 0;
+}

@@ -1,0 +1,68 @@
+{
+    "key": "group_5e2ad1559d459",
+    "title": "Login form",
+    "fields": [
+        {
+            "key": "field_5e2ad15ecd49c",
+            "label": "email",
+            "name": "email",
+            "type": "email",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5e2ad168cd49d",
+            "label": "password",
+            "name": "password",
+            "type": "password",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e2ad15ecd49c",
+                        "operator": "==contains",
+                        "value": "ads"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "custom",
+                "id": ""
+            },
+            "placeholder": "type your password",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "321"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "action": "login",
+    "modified": 1580482211
+}

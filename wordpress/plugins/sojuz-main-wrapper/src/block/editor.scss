@@ -1,0 +1,21 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block-custom-wrapper  {
+  background: #fefefe;
+  color: $black;
+  margin: 0 auto;
+  max-width: 740px;
+  padding: 2rem;
+  border:1px dashed #ccc
+}
+TEXTAREA{
+    BORDER: 0;
+    FONT-FAMILY: monospace;
+    BACKGROUND: #e8e8e8;
+    WIDTH: 100%;
+}

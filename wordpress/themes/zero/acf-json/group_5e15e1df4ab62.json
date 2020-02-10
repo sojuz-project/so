@@ -1,0 +1,106 @@
+{
+    "key": "group_5e15e1df4ab62",
+    "title": "Extra options",
+    "fields": [
+        {
+            "key": "field_5e15e1e8855ce",
+            "label": "Schema",
+            "name": "_acf_schema",
+            "type": "post_object",
+            "instructions": "Choose form schema to be attacjhed to current post",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "acf-field-group",
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_5e15e4702783b",
+            "label": "Assign form",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e15e1e8855ce",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": "createForm"
+            },
+            "message": "<button id=\"createForm\" class=\"button button-primary\">Build schema<\/button>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5e15e704e4154",
+            "label": "Fields <span id=\"editLinkSpan\"><\/span>",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e15e1e8855ce",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": "fieldsData"
+            },
+            "message": "<ul>\r\n<li>No fields avaliable<\/li>\r\n<\/ul>",
+            "new_lines": "",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1578660505
+}

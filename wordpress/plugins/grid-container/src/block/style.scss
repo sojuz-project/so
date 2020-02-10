@@ -1,0 +1,326 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+
+
+.wp-block-sojuz-block-grid-container  {
+  display: grid;
+  overflow: hidden;
+  h1{
+   font-size: 3em;
+   color:inherit;
+  } 
+  h2{
+    font-size: 2.5em;
+    color:inherit;
+  } 
+  h3{
+    font-size: 2em;
+    color:inherit;
+  } 
+  h4{
+    font-size: 1.5em;
+    color:inherit;
+  } 
+  .editor-rich-text{
+    .huge{
+      font-size:2em;
+    }
+    .large{
+      font-size:1.5em;
+    }
+    .normal{
+      font-size:1em;
+    }
+    .small{
+      font-size:.7em;
+    }
+    .ultrasmall{
+      font-size:.4em;
+    }
+    .primary {color: #0073a8}
+    .secondary {color: #005075}
+    .dark-gray {color: #111111}
+    .light-gray{ color: #767676}
+    .white{ color: #ffffff}
+  }
+}
+.drag-greed{
+  
+  overflow: hidden;
+  padding:1px;
+  display:grid;
+  grid-template-columns: repeat(49,1fr);
+  position:relative;
+  .component{
+    height: 100%;
+    position:relative;
+    overflow: hidden;
+    border:1px dotted #00000052;
+
+    .overlay{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      &.primary {background-color: #0073a8}
+      &.secondary {background-color: #005075}
+      &.dark-gray {background-color: #111111}
+      &.light-gray{background-color: #767676}
+      &.white{background-color: #ffffff}
+    }
+  }
+}
+
+.component-wrapper-image{
+  background:url(         
+    data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAM0lEQVQoU2NkIAIwEqGGAa5o//79/x0dHbHyUUyCKUTXgGEdugKQc0gziWg34fIpUUEAAFeXJApU9iLNAAAAAElFTkSuQmCC
+  ) repeat;
+  width:100%;
+  height:100%;
+}
+.component-selected{
+  outline: 2px solid #0073a8;
+  box-shadow: 0 0 5px #8bffe3;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+
+/* DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID */ 
+/* DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID */ 
+/* DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID */ 
+/* DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID */ 
+
+.grid-mode-on{
+  padding:0 !important;
+  .component{
+    height: 100% !important;
+    .overlay{
+      background-color:rgba(255, 255, 255, 0.486);
+    }
+    .editor-rich-text{
+      opacity:.5;
+    }
+  }
+  .img-wrapper{
+    height:100% !important;
+    opacity: .5;
+    background:url(
+      data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJUlEQVQoU2NkYGD4z4AJGNGFQAJDQSEWv2C6G8N3UF0YHhxAhQBLjgoG6DTb1AAAAABJRU5ErkJggg==
+    ) repeat;
+    img{
+      opacity:.6;
+      object-fit: cover;
+      height: inherit;
+      width: max-content;
+    }
+  }
+  .drag-greed{
+    margin-left:18%;
+  }
+  .blueprint-grid{
+    left:18%;
+    position:absolute !important;
+    width: calc(100% + 22px);
+    height:100%;
+    top:0;
+    
+    .row{
+      width:100%;
+      position:absolute;
+      border-bottom:1px dotted #73737324;
+      &.i0{
+        border-bottom:1px dotted #0869c39d;
+      }
+    }
+    .column{
+      width:1px;
+      height:100%;
+      position:absolute;
+      border-left:1px dotted #73737324;
+      &.i0{
+        border-left:1px dotted #0869c39d;
+      }
+      &.i49{
+        border-left:1px dotted #0869c39d;
+        width: 30%;
+        border-left: 1px dotted #0869c39d;
+        background: #fff;
+      }
+    }
+  }
+  /* Blue selections */ 
+  .block-editor-block-list__layout .block-editor-block-list__block ::selection,
+  .block-editor-block-list__layout .block-editor-block-list__block.is-multi-selected .block-editor-block-list__block-edit:before{
+    background: #fff;
+  }
+  
+}
+.grid-mode-off{
+  /* 
+  BG colors 
+*/
+.has-primary-background-color .overlay
+{
+  background-color: #0073a8;
+}
+.has-secondary-background-color .overlay{
+  background-color: #005075
+}
+.has-dark-gray-background-color .overlay
+{
+  background-color: #000
+}
+.has-light-gray-background-color .overlay
+{
+  background-color: #999
+}
+.has-white-background-color .overlay
+{
+  background-color: #fff
+}
+.has-0-background-opacity .overlay{
+  opacity: 1
+}
+.has-10-background-opacity .overlay{
+  opacity: .9
+}
+.has-20-background-opacity .overlay{
+  opacity: .8
+}
+.has-30-background-opacity .overlay{
+  opacity: .7
+}
+.has-50-background-opacity .overlay{
+  opacity: .6
+}
+.has-40-background-opacity .overlay{
+  opacity: .5
+}
+.has-50-background-opacity .overlay{
+  opacity: .4
+}
+.has-60-background-opacity .overlay{
+  opacity: .3
+}
+.has-70-background-opacity .overlay{
+  opacity: .2
+}
+.has-90-background-opacity .overlay{
+  opacity: .1
+}
+.has-100-background-opacity .overlay{
+  opacity: 0
+}
+
+.has-primary-color{
+  color:#0073a8;
+}
+.has-secondary-color{
+  color: #005075;
+}
+.has-dark-gray-color{
+  color: #000
+}
+.has-light-gray-color{
+  color: #999
+}
+.has-white-color{
+  color: #fff
+}
+}
+.resize-handler{
+  &.top{
+    height:20px !important;
+    top:-10px !important;
+    &:before{
+      top: 10px;
+      left: -10%;
+      width: 120%;
+      height: 1px;
+    }
+  }
+  &.bottom{
+    height:20px !important;
+    bottom:-10px !important;
+    &:before{
+      bottom: 10px;
+      left: -10%;
+      width: 120%;
+      height: 1px;
+    }
+  }
+  &.left{
+    &:before{
+      left: 5px;
+      top: -10%;
+      height: 120%;
+      width: 1px;
+    }
+  }
+  &.right{
+    &:before{
+      left: 5px;
+      top: -10%;
+      height: 120%;
+      width: 1px;
+    }
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    border: .1px dashed #8a8a8a;
+  }
+  &:hover{
+    background:url(
+      data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAHklEQVQYV2NkYGBgOHPmzH8TExNGRhgDJMgIImCyAOO4C2dVc8lCAAAAAElFTkSuQmCC
+    ) repeat;
+  }
+}
+
+
+.grid-mode-button{
+  font-family: sans-serif;
+  font-size: 11px;
+  margin: auto 10px auto -5px;
+}
+
+.components-button-group{
+  display:flex;
+  .components-button{
+    flex:1;
+    justify-content: center;
+  }
+}
+
+.dropdown-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-styles-wrapper{
+  color:initial;
+}
+.wrapper-badge{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  font-size:10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .wrapper-middle{
+    white-space: nowrap;
+  }
+  .dashicons{
+    font-size:12px !important;
+
+  }
+}

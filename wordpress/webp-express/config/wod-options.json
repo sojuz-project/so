@@ -1,0 +1,127 @@
+{
+    "wod": {
+        "enable-redirection-to-converter": true,
+        "enable-redirection-to-webp-realizer": true,
+        "base-htaccess-on-these-capability-tests": {
+            "passThroughHeaderWorking": false,
+            "passThroughEnvWorking": null,
+            "modHeaderWorking": null
+        },
+        "destination-extension": "append",
+        "destination-folder": "separate",
+        "forward-query-string": true,
+        "image-roots": [
+            {
+                "id": "uploads",
+                "rel-path": "wp-content/uploads",
+                "url": "https://docker.local/backend/wp-content/uploads"
+            },
+            {
+                "id": "themes",
+                "rel-path": "wp-content/themes",
+                "url": "https://docker.local/backend/wp-content/themes"
+            },
+            {
+                "id": "plugins",
+                "rel-path": "wp-content/plugins",
+                "url": "https://docker.local/backend/wp-content/plugins"
+            },
+            {
+                "id": "wp-content",
+                "rel-path": "wp-content",
+                "url": "https://docker.local/backend/wp-content"
+            },
+            {
+                "id": "index",
+                "rel-path": ".",
+                "url": "https://docker.local/backend"
+            }
+        ],
+        "success-response": "converted"
+    },
+    "webp-convert": {
+        "serve-image": {
+            "headers": {
+                "cache-control": false,
+                "content-length": true,
+                "content-type": true,
+                "expires": false,
+                "last-modified": true
+            }
+        },
+        "fail": "original",
+        "convert": {
+            "converters": [
+                {
+                    "converter": "cwebp",
+                    "options": {
+                        "use-nice": true,
+                        "try-common-system-paths": true,
+                        "try-supplied-binary-for-os": true,
+                        "method": 6,
+                        "low-memory": true,
+                        "command-line-options": ""
+                    }
+                },
+                {
+                    "converter": "vips",
+                    "options": {
+                        "smart-subsample": false,
+                        "preset": "none"
+                    }
+                },
+                {
+                    "converter": "imagemagick",
+                    "options": {
+                        "use-nice": true
+                    }
+                },
+                {
+                    "converter": "graphicsmagick",
+                    "options": {
+                        "use-nice": true
+                    }
+                },
+                {
+                    "converter": "wpc",
+                    "options": {
+                        "api-key": ""
+                    }
+                },
+                {
+                    "converter": "ewww",
+                    "options": {
+                        "check-key-status-before-converting": false
+                    }
+                },
+                {
+                    "converter": "imagick"
+                },
+                {
+                    "converter": "gmagick"
+                },
+                {
+                    "converter": "gd",
+                    "options": {
+                        "skip-pngs": false
+                    }
+                }
+            ],
+            "jpeg": {
+                "encoding": "auto",
+                "quality": "auto",
+                "default-quality": 70,
+                "max-quality": 80,
+                "near-lossless": 60
+            },
+            "png": {
+                "encoding": "auto",
+                "quality": 85,
+                "near-lossless": 60,
+                "alpha-quality": 85
+            },
+            "metadata": "none",
+            "log-call-arguments": true
+        }
+    }
+}

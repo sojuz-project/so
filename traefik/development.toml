@@ -1,7 +1,7 @@
 [api]
 entryPoint = "traefik"
 dashboard = true
-# debug = true
+debug = true
 
 [docker]
 endpoint = "unix:///var/run/docker.sock"

@@ -1,0 +1,3890 @@
+@charset "UTF-8";
+/*--------------------------------------------------------
+Style Sheet for WP Ultimate CSV Importer Free Plugin
+SCSS Version: 2.0
+Last modified: 12.06.2019
+Author: Mohamed Fariz
+----------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700");
+
+@font-face {
+  font-family: "csvimporter";
+  src: url("../fonts/csvimporter.eot?f4xnj1");
+  src: url("../fonts/csvimporter.eot?f4xnj1#iefix") format("embedded-opentype"), url("../fonts/csvimporter.ttf?f4xnj1") format("truetype"), url("../fonts/csvimporter.woff?f4xnj1") format("woff"), url("../fonts/csvimporter.svg?f4xnj1#csvimporter") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^=csv-icon-],
+[class*=" csv-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "csvimporter" !important;
+  /* speak: none; */
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.csv-icon-cloud_download:before {
+  content: "";
+}
+
+.csv-icon-highlight_off:before {
+  content: "";
+}
+
+.csv-icon-database1:before {
+  content: "";
+}
+
+.csv-icon-delete1:before {
+  content: "";
+}
+
+.csv-icon-hard-drive1:before {
+  content: "";
+}
+
+.csv-icon-layers:before {
+  content: "";
+}
+
+.csv-icon-layout:before {
+  content: "";
+}
+
+.csv-icon-sum:before {
+  content: "";
+}
+
+.csv-icon-plus1:before {
+  content: "";
+}
+
+.csv-icon-plus-circle:before {
+  content: "";
+}
+
+.csv-icon-plus-square:before {
+  content: "";
+}
+
+.csv-icon-access_alarms:before {
+  content: "";
+}
+
+.csv-icon-schedule:before {
+  content: "";
+}
+
+.csv-icon-alarm_on:before {
+  content: "";
+}
+
+.csv-icon-document-text:before {
+  content: "";
+}
+
+.csv-icon-mail:before {
+  content: "";
+}
+
+.csv-icon-map-pin:before {
+  content: "";
+}
+
+.csv-icon-airplay:before {
+  content: "";
+}
+
+.csv-icon-border_color:before {
+  content: "";
+}
+
+.csv-icon-mode_edit:before {
+  content: "";
+}
+
+.csv-icon-delete:before {
+  content: "";
+}
+
+.csv-icon-phonelink:before {
+  content: "";
+}
+
+.csv-icon-find_in_page:before {
+  content: "";
+}
+
+.csv-icon-folder:before {
+  content: "";
+}
+
+.csv-icon-folder_open:before {
+  content: "";
+}
+
+.csv-icon-important_devices:before {
+  content: "";
+}
+
+.csv-icon-inbox:before {
+  content: "";
+}
+
+.csv-icon-language:before {
+  content: "";
+}
+
+.csv-icon-laptop_chromebook:before {
+  content: "";
+}
+
+.csv-icon-laptop_mac:before {
+  content: "";
+}
+
+.csv-icon-laptop_windows:before {
+  content: "";
+}
+
+.csv-icon-airplay1:before {
+  content: "";
+}
+
+.csv-icon-calendar1:before {
+  content: "";
+}
+
+.csv-icon-chevron-down:before {
+  content: "";
+}
+
+.csv-icon-chevron-up:before {
+  content: "";
+}
+
+.csv-icon-copy:before {
+  content: "";
+}
+
+.csv-icon-download-cloud:before {
+  content: "";
+}
+
+.csv-icon-edit1:before {
+  content: "";
+}
+
+.csv-icon-edit-2:before {
+  content: "";
+}
+
+.csv-icon-edit-3:before {
+  content: "";
+}
+
+.csv-icon-hard-drive:before {
+  content: "";
+}
+
+.csv-icon-home:before {
+  content: "";
+}
+
+.csv-icon-image1:before {
+  content: "";
+}
+
+.csv-icon-inbox1:before {
+  content: "";
+}
+
+.csv-icon-link:before {
+  content: "";
+}
+
+.csv-icon-pocket:before {
+  content: "";
+}
+
+.csv-icon-server:before {
+  content: "";
+}
+
+.csv-icon-settings:before {
+  content: "";
+}
+
+.csv-icon-star1:before {
+  content: "";
+}
+
+.csv-icon-trash1:before {
+  content: "";
+}
+
+.csv-icon-trash-2:before {
+  content: "";
+}
+
+.csv-icon-upload-cloud:before {
+  content: "";
+}
+
+.csv-icon-clock-o:before {
+  content: "";
+}
+
+.csv-icon-envelope-square:before {
+  content: "";
+}
+
+.csv-icon-plus:before {
+  content: "";
+}
+
+.csv-icon-minus:before {
+  content: "";
+}
+
+.csv-icon-search:before {
+  content: "";
+}
+
+.csv-icon-envelope-o:before {
+  content: "";
+}
+
+.csv-icon-heart:before {
+  content: "";
+}
+
+.csv-icon-star:before {
+  content: "";
+}
+
+.csv-icon-star-o:before {
+  content: "";
+}
+
+.csv-icon-user:before {
+  content: "";
+}
+
+.csv-icon-th-large:before {
+  content: "";
+}
+
+.csv-icon-th:before {
+  content: "";
+}
+
+.csv-icon-th-list:before {
+  content: "";
+}
+
+.csv-icon-check:before {
+  content: "";
+}
+
+.csv-icon-close:before {
+  content: "";
+}
+
+.csv-icon-remove:before {
+  content: "";
+}
+
+.csv-icon-times:before {
+  content: "";
+}
+
+.csv-icon-power-off:before {
+  content: "";
+}
+
+.csv-icon-cog:before {
+  content: "";
+}
+
+.csv-icon-gear:before {
+  content: "";
+}
+
+.csv-icon-trash-o:before {
+  content: "";
+}
+
+.csv-icon-download:before {
+  content: "";
+}
+
+.csv-icon-tag:before {
+  content: "";
+}
+
+.csv-icon-tags:before {
+  content: "";
+}
+
+.csv-icon-book:before {
+  content: "";
+}
+
+.csv-icon-bookmark:before {
+  content: "";
+}
+
+.csv-icon-video-camera:before {
+  content: "";
+}
+
+.csv-icon-image:before {
+  content: "";
+}
+
+.csv-icon-photo:before {
+  content: "";
+}
+
+.csv-icon-picture-o:before {
+  content: "";
+}
+
+.csv-icon-map-marker:before {
+  content: "";
+}
+
+.csv-icon-edit:before {
+  content: "";
+}
+
+.csv-icon-pencil-square-o:before {
+  content: "";
+}
+
+.csv-icon-calendar:before {
+  content: "";
+}
+
+.csv-icon-facebook-square:before {
+  content: "";
+}
+
+.csv-icon-cogs:before {
+  content: "";
+}
+
+.csv-icon-gears:before {
+  content: "";
+}
+
+.csv-icon-linkedin-square:before {
+  content: "";
+}
+
+.csv-icon-upload:before {
+  content: "";
+}
+
+.csv-icon-bookmark-o:before {
+  content: "";
+}
+
+.csv-icon-hdd-o:before {
+  content: "";
+}
+
+.csv-icon-floppy-o:before {
+  content: "";
+}
+
+.csv-icon-save:before {
+  content: "";
+}
+
+.csv-icon-google-plus:before {
+  content: "";
+}
+
+.csv-icon-file-text-o:before {
+  content: "";
+}
+
+.csv-icon-angle-left:before {
+  content: "";
+}
+
+.csv-icon-angle-right:before {
+  content: "";
+}
+
+.csv-icon-angle-up:before {
+  content: "";
+}
+
+.csv-icon-angle-down:before {
+  content: "";
+}
+
+.csv-icon-quote-left:before {
+  content: "";
+}
+
+.csv-icon-quote-right:before {
+  content: "";
+}
+
+.csv-icon-spinner:before {
+  content: "";
+}
+
+.csv-icon-chain-broken:before {
+  content: "";
+}
+
+.csv-icon-unlink:before {
+  content: "";
+}
+
+.csv-icon-chevron-circle-up:before {
+  content: "";
+}
+
+.csv-icon-chevron-circle-down:before {
+  content: "";
+}
+
+.csv-icon-eur:before {
+  content: "";
+}
+
+.csv-icon-euro:before {
+  content: "";
+}
+
+.csv-icon-gbp:before {
+  content: "";
+}
+
+.csv-icon-dollar:before {
+  content: "";
+}
+
+.csv-icon-usd:before {
+  content: "";
+}
+
+.csv-icon-inr:before {
+  content: "";
+}
+
+.csv-icon-rupee:before {
+  content: "";
+}
+
+.csv-icon-cny:before {
+  content: "";
+}
+
+.csv-icon-jpy:before {
+  content: "";
+}
+
+.csv-icon-rmb:before {
+  content: "";
+}
+
+.csv-icon-yen:before {
+  content: "";
+}
+
+.csv-icon-file:before {
+  content: "";
+}
+
+.csv-icon-file-text:before {
+  content: "";
+}
+
+.csv-icon-tumblr:before {
+  content: "";
+}
+
+.csv-icon-tumblr-square:before {
+  content: "";
+}
+
+.csv-icon-database:before {
+  content: "";
+}
+
+.csv-icon-file-image-o:before {
+  content: "";
+}
+
+.csv-icon-file-photo-o:before {
+  content: "";
+}
+
+.csv-icon-file-picture-o:before {
+  content: "";
+}
+
+.csv-icon-file-archive-o:before {
+  content: "";
+}
+
+.csv-icon-file-zip-o:before {
+  content: "";
+}
+
+.csv-icon-circle-o-notch:before {
+  content: "";
+}
+
+.csv-icon-trash:before {
+  content: "";
+}
+
+.csv-icon-television:before {
+  content: "";
+}
+
+.csv-icon-tv:before {
+  content: "";
+}
+
+.csv-icon-amazon:before {
+  content: "";
+}
+
+.csv-icon-address-book-o:before {
+  content: "";
+}
+
+.csv-icon-user-o:before {
+  content: "";
+}
+
+.csv-icon-chevron-with-circle-down:before {
+  content: "";
+}
+
+.csv-icon-chevron-with-circle-left:before {
+  content: "";
+}
+
+.csv-icon-chevron-with-circle-right:before {
+  content: "";
+}
+
+.csv-icon-chevron-with-circle-up:before {
+  content: "";
+}
+
+.csv-icon-chart:before {
+  content: "";
+}
+
+.csv-icon-settings1:before {
+  content: "";
+}
+
+.csv-icon-photo1:before {
+  content: "";
+}
+
+.csv-icon-calendar2:before {
+  content: "";
+}
+
+.csv-icon-file-text1:before {
+  content: "";
+}
+
+.csv-icon-spinner8:before {
+  content: "";
+}
+
+.csv-icon-spinner9:before {
+  content: "";
+}
+
+.csv-icon-spinner10:before {
+  content: "";
+}
+
+.csv-icon-cog1:before {
+  content: "";
+}
+
+.csv-icon-download3:before {
+  content: "";
+}
+
+.csv-icon-upload3:before {
+  content: "";
+}
+
+.csv-icon-play2:before {
+  content: "";
+}
+
+/* Buttons colors */
+.shaded {
+  background: #fafafa;
+}
+
+.text-primary {
+  color: #00a699;
+}
+
+.text-warning {
+  color: #f0ad4e;
+}
+
+.text-danger {
+  color: #e04b4a;
+}
+
+.text-info {
+  color: #0073aa;
+}
+
+.text-secondary {
+  color: #0073aa;
+}
+
+.wp-ultimate-csv-importer {
+  /*  Margin & Padding Start */
+  /* Margin & Padding END */
+  /* Buttons */
+  /* Buttons CSS End */
+  /* smack_btn btn-info */
+  /* React date picker */
+  /* End react date picker */
+  /* File upload style */
+  /* End file upload style */
+  /* LOADER 1 */
+  /* Core Styles */
+  /* File Extensions*/
+  background: #f3f5f8;
+  font-size: 16px;
+  min-height: 700px;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+.wp-ultimate-csv-importer .h1,
+.wp-ultimate-csv-importer .h2,
+.wp-ultimate-csv-importer .h3,
+.wp-ultimate-csv-importer .h4,
+.wp-ultimate-csv-importer .h5,
+.wp-ultimate-csv-importer .h6,
+.wp-ultimate-csv-importer h1,
+.wp-ultimate-csv-importer h2,
+.wp-ultimate-csv-importer h3,
+.wp-ultimate-csv-importer h4,
+.wp-ultimate-csv-importer h5,
+.wp-ultimate-csv-importer h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.wp-ultimate-csv-importer label {
+  margin-bottom: 0.2rem;
+}
+
+.wp-ultimate-csv-importer .main-heading {
+  font-size: 20px;
+  font-weight: 500;
+  color: #2d3748;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 15px 0px;
+  font-family: "Poppins", sans-serif;
+}
+
+.wp-ultimate-csv-importer a {
+  text-decoration: none;
+}
+
+.wp-ultimate-csv-importer .csv-link {
+  color: #00a699;
+}
+
+.wp-ultimate-csv-importer .csv-link:hover {
+  text-decoration: underline;
+}
+
+.wp-ultimate-csv-importer .border-rad {
+  border-radius: 6px !important;
+}
+
+.wp-ultimate-csv-importer .iradio_square-green,
+.wp-ultimate-csv-importer .icheckbox_square-green {
+  margin-right: 5px;
+}
+
+.wp-ultimate-csv-importer h6,
+.wp-ultimate-csv-importer .h6 {
+  color: #0073aa;
+  margin-top: 30px;
+}
+
+.wp-ultimate-csv-importer .text-primary {
+  color: #00a699 !important;
+}
+
+.wp-ultimate-csv-importer p {
+  font-size: 16px;
+}
+
+.wp-ultimate-csv-importer .btn-select {
+  display: flex;
+}
+
+.wp-ultimate-csv-importer .btn-select label {
+  padding: 5px 15px;
+  border: 1px solid #e8e8e8;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.wp-ultimate-csv-importer .btn-select label:nth-child(2) {
+  border-radius: 4px 0px 0px 4px;
+  border-right: 0px;
+}
+
+.wp-ultimate-csv-importer .btn-select label:last-child {
+  border-radius: 0px 4px 4px 0px;
+  border-left: 0px;
+}
+
+.wp-ultimate-csv-importer .btn-select .btn-select-radio {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  z-index: 0;
+  position: absolute;
+}
+
+.wp-ultimate-csv-importer .btn-select .btn-select-radio:checked+label {
+  color: #2d3748;
+  border: 1px solid #00a699;
+  font-weight: 500;
+}
+
+.wp-ultimate-csv-importer .btn-select .btn {
+  background-color: #fff;
+}
+
+.wp-ultimate-csv-importer .btn-select .btn:hover,
+.wp-ultimate-csv-importer .btn-select .btn:focus,
+.wp-ultimate-csv-importer .btn-select .btn:active,
+.wp-ultimate-csv-importer .btn-select .btn:active:focus {
+  background: #fff !important;
+  border-color: #00a699 !important;
+  box-shadow: none !important;
+  color: #00a699;
+}
+
+.wp-ultimate-csv-importer .text-muted {
+  color: #718096 !important;
+}
+
+.wp-ultimate-csv-importer .text-ellipsis {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.wp-ultimate-csv-importer hr {
+  border-top: 2px solid #edf2f7;
+}
+
+.wp-ultimate-csv-importer .m0 {
+  margin: 0px !important;
+}
+
+.wp-ultimate-csv-importer .mt0 {
+  margin-top: 0px !important;
+}
+
+.wp-ultimate-csv-importer .mb0 {
+  margin-bottom: 0px !important;
+}
+
+.wp-ultimate-csv-importer .ml0 {
+  margin-left: 0px !important;
+}
+
+.wp-ultimate-csv-importer .mr0 {
+  margin-right: 0px !important;
+}
+
+.wp-ultimate-csv-importer .p0 {
+  padding: 0px !important;
+}
+
+.wp-ultimate-csv-importer .pt0 {
+  padding-top: 0px !important;
+}
+
+.wp-ultimate-csv-importer .pb0 {
+  padding-bottom: 0px !important;
+}
+
+.wp-ultimate-csv-importer .pl0 {
+  padding-left: 0px !important;
+}
+
+.wp-ultimate-csv-importer .pr0 {
+  padding-right: 0px !important;
+}
+
+.wp-ultimate-csv-importer .m5 {
+  margin: 5px !important;
+}
+
+.wp-ultimate-csv-importer .mt5 {
+  margin-top: 5px !important;
+}
+
+.wp-ultimate-csv-importer .mb5 {
+  margin-bottom: 5px !important;
+}
+
+.wp-ultimate-csv-importer .ml5 {
+  margin-left: 5px !important;
+}
+
+.wp-ultimate-csv-importer .mr5 {
+  margin-right: 5px !important;
+}
+
+.wp-ultimate-csv-importer .p5 {
+  padding: 5px !important;
+}
+
+.wp-ultimate-csv-importer .pt5 {
+  padding-top: 5px !important;
+}
+
+.wp-ultimate-csv-importer .pb5 {
+  padding-bottom: 5px !important;
+}
+
+.wp-ultimate-csv-importer .pl5 {
+  padding-left: 5px !important;
+}
+
+.wp-ultimate-csv-importer .pr5 {
+  padding-right: 5px !important;
+}
+
+.wp-ultimate-csv-importer .m10 {
+  margin: 10px !important;
+}
+
+.wp-ultimate-csv-importer .mt10 {
+  margin-top: 10px !important;
+}
+
+.wp-ultimate-csv-importer .mb10 {
+  margin-bottom: 10px !important;
+}
+
+.wp-ultimate-csv-importer .ml10 {
+  margin-left: 10px !important;
+}
+
+.wp-ultimate-csv-importer .mr10 {
+  margin-right: 10px !important;
+}
+
+.wp-ultimate-csv-importer .p10 {
+  padding: 10px !important;
+}
+
+.wp-ultimate-csv-importer .pt10 {
+  padding-top: 10px !important;
+}
+
+.wp-ultimate-csv-importer .pb10 {
+  padding-bottom: 10px !important;
+}
+
+.wp-ultimate-csv-importer .pl10 {
+  padding-left: 10px !important;
+}
+
+.wp-ultimate-csv-importer .pr10 {
+  padding-right: 10px !important;
+}
+
+.wp-ultimate-csv-importer .m15 {
+  margin: 15px !important;
+}
+
+.wp-ultimate-csv-importer .mt15 {
+  margin-top: 15px !important;
+}
+
+.wp-ultimate-csv-importer .mb15 {
+  margin-bottom: 15px !important;
+}
+
+.wp-ultimate-csv-importer .ml15 {
+  margin-left: 15px !important;
+}
+
+.wp-ultimate-csv-importer .mr15 {
+  margin-right: 15px !important;
+}
+
+.wp-ultimate-csv-importer .p15 {
+  padding: 15px !important;
+}
+
+.wp-ultimate-csv-importer .pt15 {
+  padding-top: 15px !important;
+}
+
+.wp-ultimate-csv-importer .pb15 {
+  padding-bottom: 15px !important;
+}
+
+.wp-ultimate-csv-importer .pl15 {
+  padding-left: 15px !important;
+}
+
+.wp-ultimate-csv-importer .pr15 {
+  padding-right: 15px !important;
+}
+
+.wp-ultimate-csv-importer .m20 {
+  margin: 20px !important;
+}
+
+.wp-ultimate-csv-importer .mt20 {
+  margin-top: 20px !important;
+}
+
+.wp-ultimate-csv-importer .mb20 {
+  margin-bottom: 20px !important;
+}
+
+.wp-ultimate-csv-importer .ml20 {
+  margin-left: 20px !important;
+}
+
+.wp-ultimate-csv-importer .mr20 {
+  margin-right: 20px !important;
+}
+
+.wp-ultimate-csv-importer .p20 {
+  padding: 20px !important;
+}
+
+.wp-ultimate-csv-importer .pt20 {
+  padding-top: 20px !important;
+}
+
+.wp-ultimate-csv-importer .pb20 {
+  padding-bottom: 20px !important;
+}
+
+.wp-ultimate-csv-importer .pl20 {
+  padding-left: 20px !important;
+}
+
+.wp-ultimate-csv-importer .pr20 {
+  padding-right: 20px !important;
+}
+
+.wp-ultimate-csv-importer .m25 {
+  margin: 25px !important;
+}
+
+.wp-ultimate-csv-importer .mt25 {
+  margin-top: 25px !important;
+}
+
+.wp-ultimate-csv-importer .mb25 {
+  margin-bottom: 25px !important;
+}
+
+.wp-ultimate-csv-importer .ml25 {
+  margin-left: 25px !important;
+}
+
+.wp-ultimate-csv-importer .mr25 {
+  margin-right: 25px !important;
+}
+
+.wp-ultimate-csv-importer .p25 {
+  padding: 25px !important;
+}
+
+.wp-ultimate-csv-importer .pt25 {
+  padding-top: 25px !important;
+}
+
+.wp-ultimate-csv-importer .pb25 {
+  padding-bottom: 25px !important;
+}
+
+.wp-ultimate-csv-importer .pl25 {
+  padding-left: 25px !important;
+}
+
+.wp-ultimate-csv-importer .pr25 {
+  padding-right: 25px !important;
+}
+
+.wp-ultimate-csv-importer .m30 {
+  margin: 30px !important;
+}
+
+.wp-ultimate-csv-importer .mt30 {
+  margin-top: 30px !important;
+}
+
+.wp-ultimate-csv-importer .mb30 {
+  margin-bottom: 30px !important;
+}
+
+.wp-ultimate-csv-importer .ml30 {
+  margin-left: 30px !important;
+}
+
+.wp-ultimate-csv-importer .mr30 {
+  margin-right: 30px !important;
+}
+
+.wp-ultimate-csv-importer .p30 {
+  padding: 30px !important;
+}
+
+.wp-ultimate-csv-importer .pt30 {
+  padding-top: 30px !important;
+}
+
+.wp-ultimate-csv-importer .pb30 {
+  padding-bottom: 30px !important;
+}
+
+.wp-ultimate-csv-importer .pl30 {
+  padding-left: 30px !important;
+}
+
+.wp-ultimate-csv-importer .pr30 {
+  padding-right: 30px !important;
+}
+
+.wp-ultimate-csv-importer .m35 {
+  margin: 35px !important;
+}
+
+.wp-ultimate-csv-importer .mt35 {
+  margin-top: 35px !important;
+}
+
+.wp-ultimate-csv-importer .mb35 {
+  margin-bottom: 35px !important;
+}
+
+.wp-ultimate-csv-importer .ml35 {
+  margin-left: 35px !important;
+}
+
+.wp-ultimate-csv-importer .mr35 {
+  margin-right: 35px !important;
+}
+
+.wp-ultimate-csv-importer .p35 {
+  padding: 35px !important;
+}
+
+.wp-ultimate-csv-importer .pt35 {
+  padding-top: 35px !important;
+}
+
+.wp-ultimate-csv-importer .pb35 {
+  padding-bottom: 35px !important;
+}
+
+.wp-ultimate-csv-importer .pl35 {
+  padding-left: 35px !important;
+}
+
+.wp-ultimate-csv-importer .pr35 {
+  padding-right: 35px !important;
+}
+
+.wp-ultimate-csv-importer .m40 {
+  margin: 40px !important;
+}
+
+.wp-ultimate-csv-importer .mt40 {
+  margin-top: 40px !important;
+}
+
+.wp-ultimate-csv-importer .mb40 {
+  margin-bottom: 40px !important;
+}
+
+.wp-ultimate-csv-importer .ml40 {
+  margin-left: 40px !important;
+}
+
+.wp-ultimate-csv-importer .mr40 {
+  margin-right: 40px !important;
+}
+
+.wp-ultimate-csv-importer .p40 {
+  padding: 40px !important;
+}
+
+.wp-ultimate-csv-importer .pt40 {
+  padding-top: 40px !important;
+}
+
+.wp-ultimate-csv-importer .pb40 {
+  padding-bottom: 40px !important;
+}
+
+.wp-ultimate-csv-importer .pl40 {
+  padding-left: 40px !important;
+}
+
+.wp-ultimate-csv-importer .pr40 {
+  padding-right: 40px !important;
+}
+
+.wp-ultimate-csv-importer .m45 {
+  margin: 45px !important;
+}
+
+.wp-ultimate-csv-importer .mt45 {
+  margin-top: 45px !important;
+}
+
+.wp-ultimate-csv-importer .mb45 {
+  margin-bottom: 45px !important;
+}
+
+.wp-ultimate-csv-importer .ml45 {
+  margin-left: 45px !important;
+}
+
+.wp-ultimate-csv-importer .mr45 {
+  margin-right: 45px !important;
+}
+
+.wp-ultimate-csv-importer .p45 {
+  padding: 45px !important;
+}
+
+.wp-ultimate-csv-importer .pt45 {
+  padding-top: 45px !important;
+}
+
+.wp-ultimate-csv-importer .pb45 {
+  padding-bottom: 45px !important;
+}
+
+.wp-ultimate-csv-importer .pl45 {
+  padding-left: 45px !important;
+}
+
+.wp-ultimate-csv-importer .pr45 {
+  padding-right: 45px !important;
+}
+
+.wp-ultimate-csv-importer .m50 {
+  margin: 50px !important;
+}
+
+.wp-ultimate-csv-importer .mt50 {
+  margin-top: 50px !important;
+}
+
+.wp-ultimate-csv-importer .mb50 {
+  margin-bottom: 50px !important;
+}
+
+.wp-ultimate-csv-importer .ml50 {
+  margin-left: 50px !important;
+}
+
+.wp-ultimate-csv-importer .mr50 {
+  margin-right: 50px !important;
+}
+
+.wp-ultimate-csv-importer .p50 {
+  padding: 50px !important;
+}
+
+.wp-ultimate-csv-importer .pt50 {
+  padding-top: 50px !important;
+}
+
+.wp-ultimate-csv-importer .pb50 {
+  padding-bottom: 50px !important;
+}
+
+.wp-ultimate-csv-importer .pl50 {
+  padding-left: 50px !important;
+}
+
+.wp-ultimate-csv-importer .pr50 {
+  padding-right: 50px !important;
+}
+
+.wp-ultimate-csv-importer .csv-importer-panel {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 20px 0 #c9d3df;
+}
+
+.wp-ultimate-csv-importer #wordpress-custom-fields-body {
+  display: none;
+}
+
+.wp-ultimate-csv-importer .csv-icon-trash-2 {
+  color: #e04b4a;
+}
+
+.wp-ultimate-csv-importer [data-display=none] {
+  display: none;
+}
+
+.wp-ultimate-csv-importer .modal .modal-content .modal-header .main-heading {
+  padding: 0;
+}
+
+.wp-ultimate-csv-importer .maintenance-mode {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 15px;
+  border-radius: 0px 6px 6px 0px;
+  background: #fff;
+  border-left: 3px solid #dc3545;
+}
+
+.wp-ultimate-csv-importer .maintenance-mode button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.wp-ultimate-csv-importer .maintenance-mode span img {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.wp-ultimate-csv-importer .export_file_name {
+  position: relative;
+}
+
+.wp-ultimate-csv-importer .export_file_name input {
+  padding-right: 90px;
+}
+
+.wp-ultimate-csv-importer .export_file_name .export_file_type {
+  position: absolute;
+  bottom: 1.5px;
+  right: 16px;
+  width: 80px;
+  padding: 6px 10px;
+  text-align: center;
+  background: #e2e8f0;
+  color: #4a5568;
+  border-radius: 0px 6px 6px 0px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.wp-ultimate-csv-importer .form_export_file_type label {
+  width: 84px;
+  height: 60px;
+  border: 2px solid #cbd5e0;
+  border-radius: 6px;
+  padding: 10px !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin: auto 5px;
+}
+
+.wp-ultimate-csv-importer .form_export_file_type label:hover {
+  border-color: #00c0b1;
+}
+
+.wp-ultimate-csv-importer .form_export_file_type input[type=radio]+label:before,
+.wp-ultimate-csv-importer .form_export_file_type input[type=radio]+label:after {
+  display: none;
+}
+
+.wp-ultimate-csv-importer .form_export_file_type input[type=radio]:checked+label {
+  border-color: #00a699;
+}
+
+.wp-ultimate-csv-importer .form_export_file_type input[type=radio]:checked+label:before {
+  content: "";
+  font-family: "csvimporter";
+  width: 22px;
+  height: 22px;
+  font-size: 13px;
+  background: #00a699;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  position: absolute;
+  right: 0px;
+  left: auto;
+  top: -7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wp-ultimate-csv-importer .bg-gray-section {
+  border: 1px solid #edf2f7;
+  background: #fbfdfd;
+  padding: 15px 0px;
+  border-radius: 6px;
+  margin: 15px auto 15px;
+}
+
+.wp-ultimate-csv-importer .section-heading {
+  font-size: 18px;
+}
+
+.wp-ultimate-csv-importer .smack-btn {
+  font-size: 1rem;
+  padding: 8px 20px;
+  line-height: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -ms-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-primary {
+  background-color: #00a699;
+  border-color: #00a699;
+  color: #ffffff;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-primary:hover {
+  background-color: #00a699;
+  border-color: #178d7c;
+  color: #ffffff;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-secondary {
+  background-color: #ffffff;
+  border: 2px solid #00a699;
+  color: #00a699;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-secondary:hover {
+  background-color: rgba(0, 166, 153, 0.1);
+  border-color: #178d7c;
+  color: #00a699;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-info {
+  padding: 5px 10px;
+  color: #4a5568;
+  font-size: 14px;
+  border: 1px solid #a0aec0;
+  background: #edf2f7;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-info:hover,
+.wp-ultimate-csv-importer .smack-btn.smack-btn-info:active {
+  background: #e2e8f0;
+}
+
+.wp-ultimate-csv-importer .smack-btn.btn-default {
+  background: #ffffff;
+  border: 1px solid #a0aec0;
+  color: #4a5568;
+}
+
+.wp-ultimate-csv-importer .smack-btn.btn-default:hover {
+  background-color: #e2e8f0;
+}
+
+.wp-ultimate-csv-importer .smack-btn.btn-default:active,
+.wp-ultimate-csv-importer .smack-btn.btn-default.active {
+  background-color: #cbd5e0;
+}
+
+.wp-ultimate-csv-importer .smack-btn.btn-default:focus {
+  background-color: #cbd5e0;
+}
+
+.wp-ultimate-csv-importer .smack-btn.btn-default:disabled,
+.wp-ultimate-csv-importer .smack-btn.btn-default.disabled,
+.wp-ultimate-csv-importer .smack-btn.btn-default[disabled] {
+  background-color: #edf2f7;
+  color: #cbd5e0;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-warning {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+  color: #2d3748;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-warning:hover {
+  background-color: #ec971f;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-warning:active,
+.wp-ultimate-csv-importer .smack-btn.smack-btn-warning.active {
+  background-color: #ec971f;
+  border: 1px solid #ec971f;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-warning:focus {
+  background-color: #ec971f;
+  border: 1px solid #ec971f;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-warning:disabled,
+.wp-ultimate-csv-importer .smack-btn.smack-btn-warning.disabled,
+.wp-ultimate-csv-importer .smack-btn.smack-btn-warning[disabled] {
+  background: #f0ad4e;
+  border-color: #f0ad4e;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-danger {
+  background-color: #e04b4a;
+  border-color: #e04b4a;
+  color: #ffffff;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-danger:hover {
+  background-color: #d32524;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-danger:active,
+.wp-ultimate-csv-importer .smack-btn.smack-btn-danger.active {
+  background-color: #d32524;
+  border: 1px solid #d32524;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-danger:focus {
+  background-color: #d32524;
+  border: 1px solid #d32524;
+}
+
+.wp-ultimate-csv-importer .smack-btn.smack-btn-danger:disabled,
+.wp-ultimate-csv-importer .smack-btn.smack-btn-danger.disabled,
+.wp-ultimate-csv-importer .smack-btn.smack-btn-danger[disabled] {
+  background: #e04b4a;
+  border-color: #e04b4a;
+}
+
+.wp-ultimate-csv-importer .smack-btn.disabled,
+.wp-ultimate-csv-importer .smack-btn[disabled],
+.wp-ultimate-csv-importer fieldset[disabled] .smack-btn {
+  pointer-events: none;
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  opacity: 0.65;
+}
+
+.wp-ultimate-csv-importer .btn-radius {
+  border-radius: 30px;
+}
+
+.wp-ultimate-csv-importer .react-datepicker-wrapper {
+  display: block;
+}
+
+.wp-ultimate-csv-importer .react-datepicker-wrapper .react-datepicker__input-container {
+  display: block;
+}
+
+.wp-ultimate-csv-importer .react-datepicker-popper .react-datepicker {
+  width: 300px;
+  border-color: #e8e8e8;
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+.wp-ultimate-csv-importer .react-datepicker-popper .react-datepicker .react-datepicker__triangle {
+  border-bottom-color: #fff;
+}
+
+.wp-ultimate-csv-importer .react-datepicker-popper .react-datepicker .react-datepicker__triangle:before {
+  border-top-color: #e8e8e8;
+}
+
+.wp-ultimate-csv-importer .react-datepicker-popper .react-datepicker .react-datepicker__navigation--previous {
+  border-right-color: #303030;
+}
+
+.wp-ultimate-csv-importer .react-datepicker-popper .react-datepicker .react-datepicker__navigation--next {
+  border-left-color: #303030;
+}
+
+.wp-ultimate-csv-importer .react-datepicker-popper .react-datepicker__month-container {
+  width: 100%;
+}
+
+.wp-ultimate-csv-importer .react-datepicker-popper .react-datepicker__header {
+  background: #fff;
+  border: none;
+}
+
+.wp-ultimate-csv-importer .react-datepicker-popper .react-datepicker__header .react-datepicker__day-name {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0px 7px;
+}
+
+.wp-ultimate-csv-importer .react-datepicker-popper .react-datepicker__month .react-datepicker__week {
+  font-size: 16px;
+}
+
+.wp-ultimate-csv-importer .react-datepicker-popper .react-datepicker__month .react-datepicker__day {
+  margin: 0px 7px;
+}
+
+.wp-ultimate-csv-importer .react-datepicker-popper .react-datepicker__month .react-datepicker__day.react-datepicker__day--selected {
+  background-image: linear-gradient(to bottom, #00a699, #00736a) !important;
+}
+
+.wp-ultimate-csv-importer .react-datepicker-popper .react-datepicker__month .react-datepicker__day.react-datepicker__day--outside-month {
+  opacity: 0.5;
+}
+
+.wp-ultimate-csv-importer .form-control {
+  border-radius: 6px;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.wp-ultimate-csv-importer .form-control:hover {
+  border: 1px solid #718096;
+}
+
+.wp-ultimate-csv-importer .form-control:focus {
+  box-shadow: none;
+  border: 1px solid #00a699;
+  box-shadow: 0 0 15px 0 rgba(0, 166, 153, 0.1);
+}
+
+.wp-ultimate-csv-importer select.form-control {
+  height: 38px;
+  padding: 6px 12px;
+}
+
+.wp-ultimate-csv-importer .dropdown-toggle {
+  outline: none !important;
+}
+
+.wp-ultimate-csv-importer .dropdown-menu li.selected a {
+  background-color: #00a699;
+}
+
+.wp-ultimate-csv-importer .dropdown-menu li.selected a:hover {
+  color: #fff;
+}
+
+.wp-ultimate-csv-importer .dropdown-menu li a:active {
+  background-color: #00a699;
+  color: #fff;
+}
+
+.wp-ultimate-csv-importer .select,
+.wp-ultimate-csv-importer .bootstrap-select {
+  border: 1px solid #ced4da !important;
+  border-radius: 6px;
+  padding: 0px;
+  left: 0% !important;
+}
+
+.wp-ultimate-csv-importer .select .btn-light,
+.wp-ultimate-csv-importer .bootstrap-select .btn-light {
+  background: #fff !important;
+}
+
+.wp-ultimate-csv-importer .select .btn-light:hover,
+.wp-ultimate-csv-importer .bootstrap-select .btn-light:hover {
+  border-color: #00a699;
+}
+
+.wp-ultimate-csv-importer .select .form-control,
+.wp-ultimate-csv-importer .bootstrap-select .form-control {
+  margin-bottom: 0px;
+}
+
+.wp-ultimate-csv-importer .switch-ios {
+  display: block;
+  width: 40px;
+  height: 25px;
+  border-radius: 50px;
+  transition: all 0.3s;
+  box-shadow: inset 0 2px 0 2px #edf2f7;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  background: #edf2f7;
+  margin-top: 10px;
+}
+
+.wp-ultimate-csv-importer .switch-ios.inline {
+  display: inline-block;
+  margin-left: 60px;
+}
+
+.wp-ultimate-csv-importer .fieldset input[type=checkbox] {
+  display: none;
+}
+
+.wp-ultimate-csv-importer .fieldset label i {
+  height: 20px;
+  width: 20px;
+  background: #fff;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 60px;
+  margin-top: 2px;
+  margin-left: 2px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  box-shadow: 0 0 0 1px #edf2f7, 0 3px 2px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+.wp-ultimate-csv-importer .fieldset input[type=checkbox]:checked+.switch-ios>i {
+  margin-left: 18px;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.wp-ultimate-csv-importer .switch-ios:active {
+  box-shadow: inset 0 0 0 20px #00a699;
+}
+
+.wp-ultimate-csv-importer .switch-ios:active>i {
+  width: 20px;
+}
+
+.wp-ultimate-csv-importer .fieldset input[type=checkbox]:checked+.switch-ios {
+  box-shadow: inset 0 0 0 20px #00a699;
+  border: none;
+}
+
+.wp-ultimate-csv-importer .fieldset label {
+  cursor: pointer;
+}
+
+.wp-ultimate-csv-importer .fieldset label:first-child {
+  margin-bottom: 0px;
+}
+
+.wp-ultimate-csv-importer .form-check {
+  margin-bottom: 10px;
+}
+
+.wp-ultimate-csv-importer .form-group .form-check-label {
+  font-weight: 400 !important;
+}
+
+.wp-ultimate-csv-importer .form-group .input-icon {
+  position: absolute;
+  right: 24px;
+  top: 38px;
+  cursor: pointer;
+}
+
+@media (max-width: 360px) {
+  .wp-ultimate-csv-importer .bootstrap-select {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wp-ultimate-csv-importer .bootstrap-select {
+    width: 100% !important;
+  }
+}
+
+.wp-ultimate-csv-importer .form-check-input {
+  position: static;
+}
+
+.wp-ultimate-csv-importer .form-group {
+  position: relative;
+}
+
+.wp-ultimate-csv-importer .form-group input[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+
+.wp-ultimate-csv-importer .form-group input[type=radio]+label {
+  display: inline-block;
+  padding-left: 40px;
+  transition: all 0.2s;
+}
+
+.wp-ultimate-csv-importer .form-group input[type=radio]+label:before {
+  content: "";
+  width: 23px;
+  height: 23px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  position: absolute;
+  left: 5px;
+  top: 0px;
+}
+
+.wp-ultimate-csv-importer .form-group input[type=radio]+label:hover:before {
+  border: 2px solid #00a699;
+}
+
+.wp-ultimate-csv-importer .form-group input[type=radio]:checked+label:before {
+  border: 2px solid #00a699;
+}
+
+.wp-ultimate-csv-importer .form-group input[type=radio]:checked+label:after {
+  content: "";
+  width: 13px;
+  height: 13px;
+  background: #00a699;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.wp-ultimate-csv-importer .checkbox input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+
+.wp-ultimate-csv-importer .checkbox input[type=checkbox]+label {
+  position: relative;
+  padding-left: 35px;
+}
+
+.wp-ultimate-csv-importer .checkbox input[type=checkbox]+label:before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.wp-ultimate-csv-importer .checkbox input[type=checkbox]+label:hover:before {
+  border: 2px solid #00a699;
+}
+
+.wp-ultimate-csv-importer .checkbox input[type=checkbox]:checked+label:after {
+  content: "";
+  font-family: "csvimporter";
+  width: 22px;
+  height: 22px;
+  background: #00a699;
+  border: 1px solid #00a699;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 13px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.wp-ultimate-csv-importer .tab-section {
+  padding: 0px 15px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+.wp-ultimate-csv-importer .tab-section .tabs {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid #bcbaba;
+}
+
+@media (max-width: 576px) {
+  .wp-ultimate-csv-importer .tab-section .tabs {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .wp-ultimate-csv-importer .tab-section .tabs {
+    display: flex;
+  }
+}
+
+.wp-ultimate-csv-importer .tab-section .tabs .tab-list {
+  text-align: center;
+  margin-bottom: 0;
+  padding: 15px;
+  float: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  background-color: #f3f5f8;
+}
+
+@media (max-width: 576px) {
+  .wp-ultimate-csv-importer .tab-section .tabs .tab-list {
+    width: 48%;
+    margin: 2px;
+    border-radius: 6px;
+    border: 1px solid #00a699;
+  }
+}
+
+.wp-ultimate-csv-importer .tab-section .tabs .tab-list:hover {
+  border-bottom: 2px solid rgba(0, 166, 153, 0.5);
+}
+
+@media (max-width: 576px) {
+  .wp-ultimate-csv-importer .tab-section .tabs .tab-list:hover {
+    color: #fff;
+    border: 1px solid rgba(0, 166, 153, 0.5);
+    background-color: rgba(0, 166, 153, 0.5);
+  }
+}
+
+.wp-ultimate-csv-importer .tab-section .tabs .tab-list.active {
+  border-bottom: 2px solid #00a699;
+  font-weight: 500;
+}
+
+@media (max-width: 576px) {
+  .wp-ultimate-csv-importer .tab-section .tabs .tab-list.active {
+    color: #fff;
+    border: 1px solid #00a699;
+    background-color: #00a699;
+  }
+}
+
+.wp-ultimate-csv-importer .nav.file-choosen-tab {
+  font-family: "Roboto", sans-serif;
+}
+
+.wp-ultimate-csv-importer .nav.file-choosen-tab .nav-link {
+  position: relative;
+  padding: 25px 15px;
+  border-radius: 0 !important;
+  color: #2d3748;
+  font-family: "Poppins", sans-serif;
+  border: 1px solid #edf2f7;
+}
+
+.wp-ultimate-csv-importer .nav.file-choosen-tab .nav-link i {
+  margin-right: 5px;
+}
+
+.wp-ultimate-csv-importer .nav.file-choosen-tab .nav-link:hover {
+  background: #f7fafc;
+}
+
+.wp-ultimate-csv-importer .nav.file-choosen-tab .nav-link.active {
+  background: #00a699;
+  color: #ffffff;
+}
+
+.wp-ultimate-csv-importer #v-pills-tabContent .form-group label {
+  margin-bottom: 0.5em;
+  font-weight: 500;
+}
+
+.wp-ultimate-csv-importer .mapping-switcher {
+  background: #fff;
+  margin-top: 20px;
+  width: 100%;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+  padding: 0px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.wp-ultimate-csv-importer .mapping-switcher li {
+  cursor: pointer;
+  text-transform: uppercase;
+  float: left;
+  position: relative;
+  width: 50%;
+  color: #718096;
+  text-align: center;
+  padding: 10px 0;
+  background: #e2e8f0;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 450px) {
+  .wp-ultimate-csv-importer .mapping-switcher li {
+    padding: 10px 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .wp-ultimate-csv-importer .mapping-switcher li {
+    overflow: hidden;
+    padding: 10px 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.wp-ultimate-csv-importer .mapping-switcher li:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.wp-ultimate-csv-importer .mapping-switcher li:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.wp-ultimate-csv-importer .mapping-switcher li.active {
+  background: #00a699;
+  color: #fff;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.wp-ultimate-csv-importer .mapping-switcher li.active:after {
+  position: absolute;
+  bottom: -12px;
+  left: 45%;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: solid 12px #00a699;
+  border-left: solid 12px transparent;
+  border-right: solid 12px transparent;
+}
+
+.wp-ultimate-csv-importer .mapping-switcher li.active:hover {
+  color: #fff;
+}
+
+.wp-ultimate-csv-importer .mapping-switcher li:hover {
+  color: #00a699;
+}
+
+.wp-ultimate-csv-importer .custom-fields-tabs {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: 1px solid #bcbaba;
+}
+
+@media (max-width: 576px) {
+  .wp-ultimate-csv-importer .custom-fields-tabs {
+    width: 100%;
+  }
+}
+
+.wp-ultimate-csv-importer .custom-fields-tabs .custom-fields-tab-list {
+  text-align: center;
+  padding: 15px;
+  float: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .wp-ultimate-csv-importer .custom-fields-tabs .custom-fields-tab-list {
+    width: 48%;
+    margin: 2px;
+    border-radius: 6px;
+    border: 1px solid #00a699;
+  }
+}
+
+.wp-ultimate-csv-importer .custom-fields-tabs .custom-fields-tab-list:hover {
+  border-bottom: 2px solid rgba(0, 166, 153, 0.5);
+}
+
+@media (max-width: 576px) {
+  .wp-ultimate-csv-importer .custom-fields-tabs .custom-fields-tab-list:hover {
+    color: #fff;
+    border: 1px solid rgba(0, 166, 153, 0.5);
+    background-color: rgba(0, 166, 153, 0.5);
+  }
+}
+
+.wp-ultimate-csv-importer .custom-fields-tabs .custom-fields-tab-list.disable {
+  cursor: not-allowed;
+  color: #cfcfcf;
+  text-decoration: line-through;
+}
+
+.wp-ultimate-csv-importer .custom-fields-tabs .custom-fields-tab-list.active {
+  border-bottom: 2px solid #00a699;
+  font-weight: 500;
+}
+
+@media (max-width: 576px) {
+  .wp-ultimate-csv-importer .custom-fields-tabs .custom-fields-tab-list.active {
+    color: #fff;
+    border: 1px solid #00a699;
+    background-color: #00a699;
+  }
+}
+
+.wp-ultimate-csv-importer .custom-fields-tabpane {
+  display: none;
+}
+
+.wp-ultimate-csv-importer .custom-fields-tabpane.active {
+  display: flex;
+  justify-content: center;
+}
+
+.wp-ultimate-csv-importer .table {
+  padding: 0 20px;
+}
+
+.wp-ultimate-csv-importer .table h5 {
+  font-size: 18px;
+}
+
+.wp-ultimate-csv-importer .table th {
+  border-bottom: 2px solid #edf2f7;
+  border-top: 1px solid #edf2f7;
+  font-family: "Poppins", sans-serif;
+  padding: 9px;
+  color: #718096;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.wp-ultimate-csv-importer .table td {
+  border-top: 1px solid #edf2f7;
+  font-family: "Roboto", sans-serif;
+  padding: 9px;
+}
+
+.wp-ultimate-csv-importer .table td a {
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .wp-ultimate-csv-importer .table td a {
+    padding: 0px;
+  }
+}
+
+.wp-ultimate-csv-importer .table td:last-child {
+  text-align: center;
+}
+
+.wp-ultimate-csv-importer .table td .badge {
+  font-size: 13px;
+}
+
+.wp-ultimate-csv-importer .table td .initialized {
+  color: #fff;
+  background-color: #17a2b8;
+}
+
+.wp-ultimate-csv-importer .table td .pending {
+  color: #2d3748;
+  background-color: #ffc107;
+}
+
+.wp-ultimate-csv-importer .table td .scheduled {
+  color: #fff;
+  background-color: #179c17;
+}
+
+.wp-ultimate-csv-importer .table td .failed {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+.wp-ultimate-csv-importer .table.table-mapping th {
+  border-top: 0;
+}
+
+.wp-ultimate-csv-importer .table.table-mapping label {
+  display: block;
+  margin: 0px;
+}
+
+.wp-ultimate-csv-importer .table.table-mapping .sub-text {
+  color: #0073aa;
+}
+
+.wp-ultimate-csv-importer .table.table-mapping tbody tr td {
+  text-align: left;
+  position: relative;
+  vertical-align: middle;
+}
+
+.wp-ultimate-csv-importer .table.table-mapping tbody tr td .wpfields {
+  font-weight: 500;
+}
+
+.wp-ultimate-csv-importer .table.table-mapping tbody tr td .sub-text {
+  font-size: 14px;
+  color: #718096;
+}
+
+.wp-ultimate-csv-importer .table.table-mapping tbody tr td.action {
+  vertical-align: middle;
+}
+
+.wp-ultimate-csv-importer .table.table-mapping tbody tr td.action .action-icon {
+  color: #718096;
+  margin: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.wp-ultimate-csv-importer .table.table-mapping tbody tr td.action .action-icon i {
+  font-size: 22px;
+}
+
+.wp-ultimate-csv-importer .table.table-mapping tbody tr td.action .action-icon i:hover {
+  color: #4a5568;
+}
+
+.wp-ultimate-csv-importer .table.table-mapping tbody tr td.action .manipulation-screen {
+  padding: 20px;
+  padding-top: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  width: 300px;
+  position: absolute;
+  z-index: 1000;
+  top: 30px;
+  right: 25px;
+  transition: all 0.5s;
+  display: none;
+}
+
+.wp-ultimate-csv-importer .table.table-mapping tbody tr td.action .manipulation-screen.active {
+  animation: scale_animate 0.3s;
+  display: block;
+}
+
+.wp-ultimate-csv-importer .table.table-mapping tbody tr td.action .manipulation-screen .close {
+  margin-bottom: 15px;
+}
+
+.wp-ultimate-csv-importer .table.table-mapping tbody tr td.action .manipulation-screen .csv-hint {
+  padding: 10px;
+  background: rgba(0, 166, 153, 0.2);
+  color: #00a699;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.wp-ultimate-csv-importer .table.table-striped tbody tr:nth-of-type(2n + 1) {
+  background-color: #f7fafc;
+}
+
+.wp-ultimate-csv-importer .table.table-striped tbody tr td {
+  border: 0 !important;
+  vertical-align: middle;
+}
+
+.wp-ultimate-csv-importer #terms-taxonomies-body .table td:last-child a,
+.wp-ultimate-csv-importer #wordpress-fields-body .table td:last-child a,
+.wp-ultimate-csv-importer #seo-fields-body .table td:last-child a {
+  margin: 5px 5px 5px 0px;
+  padding-left: 0px;
+}
+
+.wp-ultimate-csv-importer #wordpress-custom-fields-body .table th:last-child {
+  text-align: center;
+}
+
+.wp-ultimate-csv-importer #wordpress-custom-fields-body .table td {
+  vertical-align: top;
+}
+
+.wp-ultimate-csv-importer #wordpress-custom-fields-body .table td:last-child {
+  text-align: center;
+}
+
+.wp-ultimate-csv-importer #wordpress-custom-fields-body .table td:last-child a {
+  margin: 5px 0px 5px 0px;
+}
+
+.wp-ultimate-csv-importer #wordpress-custom-fields-body .table td:last-child .csv-hint {
+  text-align: left;
+}
+
+@keyframes scale_animate {
+  0% {
+    transform: scale(0.4);
+    transform-origin: 100% 0%;
+  }
+
+  90% {
+    transform-origin: 0% 0%;
+  }
+
+  100% {
+    transform: scale(1);
+    transform-origin: 0% 0%;
+  }
+}
+
+.wp-ultimate-csv-importer .action-icon {
+  cursor: pointer;
+}
+
+.wp-ultimate-csv-importer .table.table-manager p {
+  color: #212529;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.wp-ultimate-csv-importer .table.table-manager .text-label {
+  color: #62656c;
+  font-weight: normal;
+}
+
+.wp-ultimate-csv-importer .table.table-manager .list-inline-item:not(:last-child) {
+  margin-right: 0px;
+}
+
+.wp-ultimate-csv-importer .table.table-manager .action-icon i {
+  font-size: 20px;
+}
+
+.wp-ultimate-csv-importer .table.table-manager .action-icon i.csv-icon-highlight_off {
+  font-size: 22px;
+}
+
+.wp-ultimate-csv-importer .table.table-manager td ul {
+  margin-bottom: 0;
+}
+
+.wp-ultimate-csv-importer .table-flxed {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.wp-ultimate-csv-importer .table-flxed thead {
+  width: 100%;
+}
+
+.wp-ultimate-csv-importer .table-flxed tbody {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.wp-ultimate-csv-importer .border-bottom {
+  border-bottom-color: #edf2f7 !important;
+}
+
+.wp-ultimate-csv-importer .card {
+  margin-top: 10px;
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.wp-ultimate-csv-importer .card .card-header {
+  padding: 10px 20px;
+  border-radius: 6px 6px 0 0;
+  background-color: #f7fafc;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.wp-ultimate-csv-importer .card .card-header span {
+  cursor: pointer;
+}
+
+.wp-ultimate-csv-importer .card .card-header.bg-white {
+  border-radius: 6px;
+}
+
+.wp-ultimate-csv-importer #mapping-accordion {
+  margin-bottom: 30px;
+}
+
+.wp-ultimate-csv-importer .main-heading span {
+  border: 1px solid #ccc;
+  padding: 2px 5px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.wp-ultimate-csv-importer .main-heading span.active {
+  transform: rotate(180deg);
+}
+
+.wp-ultimate-csv-importer .main-heading span.exportData {
+  padding: 3px 16px;
+  font-size: 18px;
+  color: #00a699;
+  background: rgba(0, 166, 153, 0.05);
+  border: 2px solid rgba(0, 166, 153, 0.3);
+}
+
+.wp-ultimate-csv-importer .settings {
+  padding: 0px !important;
+}
+
+.wp-ultimate-csv-importer .settings .setting-container {
+  margin: 0px;
+  padding: 0px;
+}
+
+.wp-ultimate-csv-importer .setting-tab-section {
+  margin-top: 20px;
+}
+
+@media (max-width: 510px) {
+  .wp-ultimate-csv-importer .setting-tab-section {
+    margin-top: 10px;
+  }
+}
+
+.wp-ultimate-csv-importer .setting-tab {
+  list-style: none;
+  padding: 0px;
+}
+
+.wp-ultimate-csv-importer .setting-tab .setting-tab-list {
+  padding: 15px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  border: 1px solid #edf2f7;
+  border-left: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 0;
+}
+
+.wp-ultimate-csv-importer .setting-tab .setting-tab-list i {
+  padding-right: 10px;
+}
+
+.wp-ultimate-csv-importer .setting-tab .setting-tab-list:hover {
+  background-color: #e9e9e9;
+}
+
+.wp-ultimate-csv-importer .setting-tab .setting-tab-list.active {
+  background-color: #00a699;
+  color: #fff;
+  font-weight: 500;
+}
+
+.wp-ultimate-csv-importer .setting-tab-pane {
+  display: none;
+  margin-bottom: 15px;
+}
+
+.wp-ultimate-csv-importer .setting-tab-pane.active {
+  display: block;
+}
+
+.wp-ultimate-csv-importer .setting-tab-pane h4 {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+.wp-ultimate-csv-importer .setting-tab-pane .form-group {
+  margin-bottom: 2rem;
+}
+
+.wp-ultimate-csv-importer .radio label {
+  padding-right: 10px;
+}
+
+.wp-ultimate-csv-importer .database-optimization {
+  padding-left: 0;
+}
+
+.wp-ultimate-csv-importer .database-optimization li {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.wp-ultimate-csv-importer .export {
+  padding: 0px 50px;
+}
+
+@media (max-width: 768px) {
+  .wp-ultimate-csv-importer .export {
+    padding: 0px 15px;
+  }
+}
+
+.wp-ultimate-csv-importer .export .advanced {
+  padding-right: 30px;
+  align-self: center;
+}
+
+.wp-ultimate-csv-importer .export .advanced-filter {
+  margin: 10px auto;
+  width: 100%;
+  display: inline-block;
+}
+
+.wp-ultimate-csv-importer .export .advanced-filter .bootstrap-select {
+  width: 100%;
+}
+
+.wp-ultimate-csv-importer .export .form-group .select {
+  width: 100%;
+}
+
+.wp-ultimate-csv-importer .export .card {
+  width: 100%;
+  box-shadow: none;
+}
+
+.wp-ultimate-csv-importer .export .card .card-header {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+.wp-ultimate-csv-importer .importing-details .progress-status {
+  font-size: 16px;
+  color: #a0aec0;
+  text-transform: uppercase;
+}
+
+.wp-ultimate-csv-importer .importing-details .import-progress {
+  position: relative;
+  display: flex;
+}
+
+.wp-ultimate-csv-importer .importing-details .progress-loading {
+  font-size: 25px;
+  color: #00a699;
+  display: inline-block;
+}
+
+.wp-ultimate-csv-importer .importing-details .progress-timing {
+  display: inline-block;
+  justify-content: flex-end;
+  align-self: center;
+  position: absolute;
+  right: 0;
+}
+
+.wp-ultimate-csv-importer .sub-title {
+  color: #718096;
+  font-size: 14px;
+  margin-left: 35px;
+  margin-bottom: 20px;
+}
+
+.wp-ultimate-csv-importer .border-container {
+  padding: 35px 15px 15px;
+  border: 1px solid #e8e8e8;
+  position: relative;
+  margin: 15px auto;
+  border-radius: 6px;
+}
+
+.wp-ultimate-csv-importer .border-container .border-container-header {
+  position: absolute;
+  top: -20px;
+  padding: 10px 15px;
+  background: #f2f2f2;
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.wp-ultimate-csv-importer .btn-add-size {
+  border: none;
+  background: none;
+  color: #00a699;
+  cursor: pointer;
+  outline: none;
+}
+
+.wp-ultimate-csv-importer .media-fields {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.wp-ultimate-csv-importer .media-fields.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wp-ultimate-csv-importer .media th:last-child {
+  text-align: center;
+}
+
+.wp-ultimate-csv-importer table.media-handle-image-size tbody tr td.delete {
+  font-size: 22px;
+  color: #dc3545;
+}
+
+.wp-ultimate-csv-importer table.media-handle-image-size tbody tr td.delete i {
+  cursor: pointer;
+}
+
+.wp-ultimate-csv-importer .success {
+  color: #179c17;
+  position: relative;
+  margin-left: 25px;
+}
+
+.wp-ultimate-csv-importer .success:before {
+  content: "";
+  border: 1px solid #179c17;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: -22px;
+  top: 5px;
+}
+
+.wp-ultimate-csv-importer .success:after {
+  content: "";
+  border: 1px solid #179c17;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  left: -18px;
+  top: 9px;
+  background-color: #179c17;
+}
+
+.wp-ultimate-csv-importer .error {
+  color: #dc3545;
+  position: relative;
+  margin-left: 25px;
+}
+
+.wp-ultimate-csv-importer .error:before {
+  content: "";
+  border: 1px solid #dc3545;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: -22px;
+  top: 5px;
+}
+
+.wp-ultimate-csv-importer .error:after {
+  content: "";
+  border: 1px solid #dc3545;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  left: -18px;
+  top: 9px;
+  background-color: #dc3545;
+}
+
+.wp-ultimate-csv-importer #upload_media .progress-loading {
+  font-size: 18px;
+}
+
+.wp-ultimate-csv-importer .dboptimization .form-check-input {
+  margin: 0 !important;
+}
+
+.wp-ultimate-csv-importer .text-dboptimization {
+  font-size: 15px;
+}
+
+.wp-ultimate-csv-importer .set-box-container {
+  padding: 15px 10px;
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.wp-ultimate-csv-importer .set-box-container:hover {
+  transition: all 0.5s;
+  transform: translateY(-10px);
+  box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.wp-ultimate-csv-importer .set-box-container a {
+  text-decoration: none;
+}
+
+.wp-ultimate-csv-importer .set-box-container img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.wp-ultimate-csv-importer .set-box-container h2 {
+  margin: auto;
+  color: #888;
+  font-size: 20px;
+}
+
+.wp-ultimate-csv-importer .set-box-container p {
+  color: #888;
+  margin-top: 15px;
+}
+
+.wp-ultimate-csv-importer .mapping-sidebar {
+  z-index: 100;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 20px 0 #c9d3df;
+  margin-top: 50px;
+  padding: 0;
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(204, 204, 204, 0.8);
+}
+
+.wp-ultimate-csv-importer .mapping-sidebar .mapping-sidebar-title {
+  border-bottom: 1px solid #cbd5e0;
+  width: 100%;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-collapse: separate;
+  color: #464646;
+  font-size: 12px;
+  font-weight: bold;
+  background: #f7fafc;
+}
+
+.wp-ultimate-csv-importer .mapping-sidebar .mapping-sidebar-arrow {
+  width: 20%;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.wp-ultimate-csv-importer .mapping-sidebar .mapping-sidebar-arrow [class^=csv-icon-] {
+  font-size: 24px;
+  color: #cbd5e0;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.wp-ultimate-csv-importer .mapping-sidebar .mapping-sidebar-arrow [class^=csv-icon-]:hover {
+  color: #718096;
+}
+
+.wp-ultimate-csv-importer .mapping-sidebar .mapping-sidebar-arrow a {
+  text-decoration: none;
+}
+
+.wp-ultimate-csv-importer .mapping-sidebar .mapping-sidebar-textbox-section input[type=text] {
+  width: 40px;
+  text-align: center;
+  border: 1px solid #a0aec0;
+  border-radius: 3px;
+  margin-left: 5px;
+  padding: 2px;
+  font-size: 14px;
+}
+
+.wp-ultimate-csv-importer .mapping-sidebar .mapping-textbox-out-of {
+  color: #4a5568;
+  padding: 0px 12px;
+}
+
+.wp-ultimate-csv-importer .mapping-sidebar .mapping-sidebar-textbox-section {
+  width: 60%;
+  text-align: center;
+}
+
+.wp-ultimate-csv-importer .mapping-sidebar .uci_mapping_attr {
+  padding: 10px;
+  border: none;
+  margin-top: 0px;
+}
+
+.wp-ultimate-csv-importer .mapping-sidebar .mapping-sidebar-content-section {
+  max-height: 400px;
+  overflow: auto;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.wp-ultimate-csv-importer .uci_mapping {
+  margin: 10px;
+}
+
+.wp-ultimate-csv-importer .uci_mapping .table td:last-child {
+  text-align: left;
+}
+
+.wp-ultimate-csv-importer .uci_mapping table {
+  border-collapse: separate;
+  border-spacing: 5px;
+  padding: 0;
+  border: 0;
+  font-size: 14px;
+}
+
+.wp-ultimate-csv-importer .uci_mapping table tr td:first-child {
+  cursor: pointer;
+}
+
+.wp-ultimate-csv-importer .uci_mapping td {
+  padding: 5px 8px;
+  margin: 0 10px;
+  border-radius: 4px;
+  width: 150px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.wp-ultimate-csv-importer .uci_mapping tr {
+  margin-bottom: 10px;
+}
+
+.wp-ultimate-csv-importer .delete-textbox {
+  font-size: 20px;
+  margin: 5px 50px;
+  cursor: pointer;
+}
+
+.wp-ultimate-csv-importer .mapping-sidebar-fixed {
+  position: fixed;
+  top: 20px;
+  width: 320px;
+}
+
+.wp-ultimate-csv-importer .fixed-bottom-position {
+  top: auto;
+  bottom: 320px;
+}
+
+.wp-ultimate-csv-importer .uci_mapping {
+  height: 75vh;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.wp-ultimate-csv-importer .drop_container {
+  margin: 40px 0;
+  border: 2px dashed #d5d4d4;
+  transition: 0.3s;
+  background: #f9fbfc;
+  width: 100%;
+  margin-left: -10px;
+  position: relative;
+  min-height: 100%;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.wp-ultimate-csv-importer .drop_container span {
+  font-size: 50px;
+  color: #d5d4d4;
+  display: block;
+  transform: translateX(0);
+  transition: 0.3s;
+}
+
+.wp-ultimate-csv-importer .drop_container h5 {
+  color: #333333;
+  margin-bottom: 4px;
+}
+
+.wp-ultimate-csv-importer .drop_container:hover {
+  border: 2px dashed rgba(0, 166, 153, 0.7);
+  transform: scale(1.005);
+  box-shadow: 0 2px 60px rgba(0, 0, 0, 0.1);
+}
+
+.wp-ultimate-csv-importer .drop_container:hover span {
+  transform: translateY(-10px);
+}
+
+.wp-ultimate-csv-importer .drop_container .drop_file {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.wp-ultimate-csv-importer .drop_container .browse-btn {
+  z-index: 1001;
+  position: relative;
+}
+
+.wp-ultimate-csv-importer .file-info-container {
+  padding: 40px 20px;
+}
+
+.wp-ultimate-csv-importer .file-info-container .file-name {
+  margin-top: 20px;
+  font-size: 22px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wp-ultimate-csv-importer .file-info-container .file-name span {
+  font-size: 18px;
+  color: #718096;
+}
+
+.wp-ultimate-csv-importer .file-info-container .progress {
+  margin-top: 25px;
+}
+
+.wp-ultimate-csv-importer .progress-bar {
+  background: #00a699 linear-gradient(to right, #65cd8d, #4fc492, #38ba96, #21b098, #00a699);
+  border-radius: inherit;
+}
+
+.wp-ultimate-csv-importer .progress {
+  border-radius: 30px;
+}
+
+.wp-ultimate-csv-importer .upload-info {
+  position: absolute;
+  width: 90%;
+  top: 30%;
+  left: 0;
+  z-index: 1000;
+}
+
+.wp-ultimate-csv-importer #v-pills-tabContent .filepond--wrapper .filepond--drop-label label:after {
+  content: "Supported file types .csv .txt .xml .zip";
+  position: absolute;
+  bottom: -20px;
+  z-index: 1000;
+  transform: translateX(-50%);
+  left: 50%;
+  text-align: center;
+  font-family: "Poppins", sans-serif !important;
+  color: #4a5568;
+  width: 300px;
+  font-weight: 500;
+}
+
+.wp-ultimate-csv-importer .filepond--wrapper {
+  margin: 20px auto;
+}
+
+.wp-ultimate-csv-importer .filepond--wrapper .filepond--drop-label {
+  margin-top: 0px;
+  height: 430px;
+  width: 97.5%;
+  background: #f9fbfc;
+  border: 2px dashed #cbd5e0;
+  border-radius: 6px;
+}
+
+.wp-ultimate-csv-importer .filepond--wrapper .filepond--drop-label label {
+  font-size: 16px;
+  position: relative;
+  margin-top: 30px;
+}
+
+.wp-ultimate-csv-importer .filepond--wrapper .filepond--drop-label label span {
+  margin: 20px auto;
+  width: 70%;
+  display: block;
+  text-decoration: none;
+  padding: 8px 3px;
+  color: #fff;
+  background: #00a699;
+  border: 1px solid #00a699;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.wp-ultimate-csv-importer .filepond--wrapper .filepond--drop-label label span:hover {
+  transition: all 0.3s;
+  transform: translateY(-5px);
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+.wp-ultimate-csv-importer .filepond--wrapper .filepond--drop-label label:before {
+  content: "";
+  font-size: 50px;
+  color: #cbd5e0;
+  font-family: "csvimporter" !important;
+  position: absolute;
+  left: 35%;
+  bottom: 85%;
+}
+
+.wp-ultimate-csv-importer .filepond--wrapper .filepond--drip {
+  background: #fff;
+  opacity: 1;
+}
+
+.wp-ultimate-csv-importer .filepond--wrapper .filepond--root[data-hopper-state=drag-over] .filepond--drop-label {
+  transition: all 0.2s;
+  border: 2px dashed rgba(0, 166, 153, 0.7);
+  transform: scale(1.005);
+  box-shadow: 0 2px 60px rgba(0, 0, 0, 0.1);
+}
+
+.wp-ultimate-csv-importer .filepond--wrapper .filepond--list-scroller .filepond--list .filepond--item {
+  max-height: 70px;
+}
+
+.wp-ultimate-csv-importer .filepond--wrapper .filepond--list-scroller .filepond--list .filepond--item[data-filepond-item-state=processing-error] .filepond--file-wrapper {
+  background: #dc3545;
+}
+
+.wp-ultimate-csv-importer .filepond--wrapper .filepond--list-scroller .filepond--list .filepond--item .filepond--file-wrapper {
+  height: auto;
+  background: #00a699;
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px 15px;
+}
+
+.wp-ultimate-csv-importer .filepond--wrapper .filepond--list-scroller .filepond--list .filepond--item .filepond--file-wrapper .filepond--file-info .filepond--file-info-main,
+.wp-ultimate-csv-importer .filepond--wrapper .filepond--list-scroller .filepond--list .filepond--item .filepond--file-wrapper .filepond--file-info .filepond--file-info-sub {
+  font-size: 17px;
+  opacity: 1;
+}
+
+.wp-ultimate-csv-importer .filepond--wrapper .filepond--list-scroller .filepond--list .filepond--item .filepond--file-wrapper .filepond--file-status .filepond--file-status-main,
+.wp-ultimate-csv-importer .filepond--wrapper .filepond--list-scroller .filepond--list .filepond--item .filepond--file-wrapper .filepond--file-status .filepond--file-status-sub {
+  font-size: 17px;
+  opacity: 1;
+}
+
+.wp-ultimate-csv-importer .progress-timing {
+  color: #718096;
+}
+
+.wp-ultimate-csv-importer .progress-timing span {
+  font-weight: 500;
+  color: #1a202c;
+}
+
+.wp-ultimate-csv-importer .min {
+  min-height: 420px;
+}
+
+.wp-ultimate-csv-importer .importer-log .table td {
+  border: 0;
+  color: #718096;
+}
+
+.wp-ultimate-csv-importer .importer-log .table td span {
+  font-weight: 500;
+  color: #1a202c;
+}
+
+.wp-ultimate-csv-importer .importer-log .table td span.text-success,
+.wp-ultimate-csv-importer .importer-log .table td span.text-success span {
+  color: #179c17;
+}
+
+.wp-ultimate-csv-importer .importer-log .table td span.text-danger,
+.wp-ultimate-csv-importer .importer-log .table td span.text-danger span {
+  color: #dc3545;
+}
+
+.wp-ultimate-csv-importer .importer-log .log-details-table {
+  width: 98%;
+}
+
+.wp-ultimate-csv-importer .importer-log .log-details-table td {
+  border-bottom: 1px solid #edf2f7;
+  padding: 10px 0;
+}
+
+.wp-ultimate-csv-importer #showLogText {
+  white-space: pre-line;
+  line-height: 2;
+  padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #edf2f7;
+  border-radius: 6px;
+}
+
+.wp-ultimate-csv-importer .Toastify__toast-container--top-right {
+  top: 5em !important;
+}
+
+.wp-ultimate-csv-importer .Toastify {
+  font-family: "Poppins", sans-serif;
+}
+
+.wp-ultimate-csv-importer .Toastify .Toastify__toast {
+  font-family: inherit;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.wp-ultimate-csv-importer .Toastify .Toastify__toast--info {
+  background: #0073aa;
+}
+
+.wp-ultimate-csv-importer .Toastify .Toastify__toast-body {
+  padding: 10px 50px;
+}
+
+.wp-ultimate-csv-importer .Toastify__toast.Toastify__toast--success,
+.wp-ultimate-csv-importer .Toastify__toast.Toastify__toast--error,
+.wp-ultimate-csv-importer .Toastify__toast.Toastify__toast--info {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.wp-ultimate-csv-importer .Toastify__toast.Toastify__toast--success {
+  border-top: 4px solid #38b2ac;
+}
+
+.wp-ultimate-csv-importer .Toastify__toast.Toastify__toast--success::before {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: url("../../images/check-circle.png");
+  content: " ";
+  top: 25px;
+  left: 10px;
+}
+
+.wp-ultimate-csv-importer .Toastify__toast--success {
+  background: #e6fffa !important;
+  color: #234e52 !important;
+}
+
+.wp-ultimate-csv-importer .Toastify__toast--error {
+  background: #fff5f5;
+  color: #c53030 !important;
+  border-top: 4px solid #f56565 !important;
+  border-radius: 6px;
+}
+
+.wp-ultimate-csv-importer .Toastify__toast--error::before {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: url("../../images/warning.png");
+  content: " ";
+  top: 25px;
+  left: 10px;
+}
+
+.wp-ultimate-csv-importer .Toastify__toast--info {
+  background: #ebf8ff !important;
+  color: #2b6cb0 !important;
+  border-top: 4px solid #4299e1 !important;
+  border-radius: 6px;
+}
+
+.wp-ultimate-csv-importer .Toastify__toast--info::before {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: url("../../images/info.png");
+  content: " ";
+  top: 25px;
+  left: 10px;
+}
+
+.wp-ultimate-csv-importer .loader {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.wp-ultimate-csv-importer .loader-1:before,
+.wp-ultimate-csv-importer .loader-1:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 3px solid transparent;
+  border-top-color: #00a699;
+}
+
+.wp-ultimate-csv-importer .loader-1:before {
+  z-index: 100;
+  animation: spin 1s infinite;
+}
+
+.wp-ultimate-csv-importer .loader-1:after {
+  border: 3px solid #ccc;
+}
+
+.wp-ultimate-csv-importer .ajax-loader {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  position: relative;
+  margin-right: 80px;
+}
+
+.wp-ultimate-csv-importer .ajax-loader.loading:before,
+.wp-ultimate-csv-importer .ajax-loader.loading:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -25px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 3px solid transparent;
+  border-top-color: #00a699;
+}
+
+.wp-ultimate-csv-importer .ajax-loader.loading:before {
+  z-index: 100;
+  animation: spin 1s infinite;
+}
+
+.wp-ultimate-csv-importer .ajax-loader.loading:after {
+  border: 3px solid #ccc;
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  50% {
+    color: transparent;
+  }
+}
+
+.wp-ultimate-csv-importer .loader__dot {
+  animation: 1s blink infinite;
+}
+
+.wp-ultimate-csv-importer .loader__dot:nth-child(2) {
+  animation-delay: 250ms;
+}
+
+.wp-ultimate-csv-importer .loader__dot:nth-child(3) {
+  animation-delay: 500ms;
+}
+
+.wp-ultimate-csv-importer #file_tree {
+  border: 1px solid #d5d4d4;
+  border-radius: 6px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.wp-ultimate-csv-importer #file_tree:hover {
+  overflow-y: auto;
+}
+
+.wp-ultimate-csv-importer ul.jqueryfiletree {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 0px;
+  margin: 0px;
+}
+
+.wp-ultimate-csv-importer ul.jqueryfiletree li {
+  list-style: none;
+  padding: 0px;
+  padding-left: 20px;
+  margin: 0px;
+  white-space: nowrap;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.wp-ultimate-csv-importer ul.jqueryfiletree a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 0px 2px;
+}
+
+.wp-ultimate-csv-importer ul.jqueryfiletree a:hover {
+  background: #e6f6ff;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.directory {
+  background: url(../images/file/folder.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.expanded {
+  background: url(../images/file/folder_open.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.file {
+  background: url(../images/file/file.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.wait {
+  background: url(../images/file/spinner.gif) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_3gp {
+  background: url(../images/file/film.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_afp {
+  background: url(../images/file/code.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_afpa {
+  background: url(../images/file/code.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_asp {
+  background: url(../images/file/code.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_aspx {
+  background: url(../images/file/code.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_avi {
+  background: url(../images/file/film.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_bat {
+  background: url(../images/file/application.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_bmp {
+  background: url(../images/file/picture.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_c {
+  background: url(../images/file/code.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_cfm {
+  background: url(../images/file/code.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_cgi {
+  background: url(../images/file/code.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_com {
+  background: url(../images/file/application.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_cpp {
+  background: url(../images/file/code.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_css {
+  background: url(../images/file/css.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_doc {
+  background: url(../images/file/doc.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_exe {
+  background: url(../images/file/application.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_gif {
+  background: url(../images/file/picture.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_fla {
+  background: url(../images/file/flash.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_h {
+  background: url(../images/file/code.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_htm {
+  background: url(../images/file/html.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_html {
+  background: url(../images/file/html.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_jar {
+  background: url(../images/file/java.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_jpg {
+  background: url(../images/file/picture.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_jpeg {
+  background: url(../images/file/picture.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_js {
+  background: url(../images/file/script.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_lasso {
+  background: url(../images/file/code.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_log {
+  background: url(../images/file/txt.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_m4p {
+  background: url(../images/file/music.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_mov {
+  background: url(../images/file/film.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_mp3 {
+  background: url(../images/file/music.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_mp4 {
+  background: url(../images/file/film.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_mpg {
+  background: url(../images/file/film.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_mpeg {
+  background: url(../images/file/film.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_ogg {
+  background: url(../images/file/music.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_pcx {
+  background: url(../images/file/picture.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_pdf {
+  background: url(../images/file/pdf.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_php {
+  background: url(../images/file/php.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_png {
+  background: url(../images/file/picture.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_ppt {
+  background: url(../images/file/ppt.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_psd {
+  background: url(../images/file/psd.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_pl {
+  background: url(../images/file/script.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_py {
+  background: url(../images/file/script.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_rb {
+  background: url(../images/file/ruby.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_rbx {
+  background: url(../images/file/ruby.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_rhtml {
+  background: url(../images/file/ruby.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_rpm {
+  background: url(../images/file/linux.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_ruby {
+  background: url(../images/file/ruby.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_sql {
+  background: url(../images/file/db.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_swf {
+  background: url(../images/file/flash.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_tif {
+  background: url(../images/file/picture.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_tiff {
+  background: url(../images/file/picture.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_txt {
+  background: url(../images/file/txt.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_vb {
+  background: url(../images/file/code.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_wav {
+  background: url(../images/file/music.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_wmv {
+  background: url(../images/file/film.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_xls {
+  background: url(../images/file/xls.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_xml {
+  background: url(../images/file/code.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_csv {
+  background: url(../images/file/code.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .jqueryfiletree li.ext_zip {
+  background: url(../images/file/zip.png) left top no-repeat;
+}
+
+.wp-ultimate-csv-importer .csv-addon-box {
+  width: 28%;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  padding: 15px;
+  margin: 5px 10px;
+  border-top: 3px solid;
+  box-shadow: 15px 15px 20px rgba(0, 0, 50, 0.08);
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .wp-ultimate-csv-importer .csv-addon-box {
+    width: 90%;
+  }
+}
+
+.wp-ultimate-csv-importer .addon-header {
+  height: 100px;
+}
+
+.wp-ultimate-csv-importer .addon-header p {
+  color: #5d5d5d;
+}
+
+.wp-ultimate-csv-importer .csv-addon-box h2 {
+  font-size: 22px;
+  text-transform: capitalize;
+}
+
+.wp-ultimate-csv-importer .csv-addon-box p {
+  font-size: 15px;
+}
+
+.wp-ultimate-csv-importer .sub_fields {
+  margin-top: 25px;
+  min-height: 200px;
+  height: 280px;
+}
+
+.wp-ultimate-csv-importer .sub_field {
+  margin-bottom: 15px;
+}
+
+.wp-ultimate-csv-importer .sub_field h3 {
+  font-size: 18px;
+  font-size: 600;
+  position: relative;
+}
+
+.wp-ultimate-csv-importer .sub_field ul {
+  padding-left: 15px;
+}
+
+.wp-ultimate-csv-importer .sub_field ul li {
+  list-style: square;
+  font-size: 15px;
+  color: #5d5d5d;
+  margin-top: 5px;
+}
+
+.wp-ultimate-csv-importer .sub_field p {
+  font-size: 15px;
+  color: #303030;
+  padding-left: 20px;
+}
+
+.wp-ultimate-csv-importer .btn-install {
+  border-radius: 0;
+}
+
+.wp-ultimate-csv-importer .btn-install:hover {
+  transition: all 0.2s;
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+}
+
+.wp-ultimate-csv-importer .import-woocommerce {
+  border-top-color: #e64e6f;
+}
+
+.wp-ultimate-csv-importer .import-woocommerce h2 {
+  color: #e64e6f;
+}
+
+.wp-ultimate-csv-importer .import-woocommerce .btn-install {
+  background-color: #e64e6f;
+  color: #fff;
+  border-radius: 6px !important;
+}
+
+.wp-ultimate-csv-importer .import-users {
+  border-top-color: #239ae9;
+}
+
+.wp-ultimate-csv-importer .import-users h2 {
+  color: #239ae9;
+}
+
+.wp-ultimate-csv-importer .import-users .btn-install {
+  background: #239ae9;
+  color: #fff;
+  border-radius: 6px !important;
+}
+
+.wp-ultimate-csv-importer .ultimate-exporter {
+  border-top-color: #02b463;
+}
+
+.wp-ultimate-csv-importer .ultimate-exporter h2 {
+  color: #02b463;
+}
+
+.wp-ultimate-csv-importer .ultimate-exporter .btn-install {
+  background: #02b463;
+  color: #fff;
+  border-radius: 6px !important;
+}
+
+.wp-ultimate-csv-importer .importer-pro {
+  border-top-color: #00a699;
+}
+
+.wp-ultimate-csv-importer .importer-pro h2 {
+  color: #00a699;
+}
+
+.wp-ultimate-csv-importer .importer-pro .btn-install {
+  background: #00a699;
+  color: #fff;
+  border-radius: 6px !important;
+}
+
+.wp-ultimate-csv-importer .pro-tag,
+.wp-ultimate-csv-importer .upgrade-pro-tag {
+  position: relative;
+}
+
+.wp-ultimate-csv-importer .pro-tag::before,
+.wp-ultimate-csv-importer .upgrade-pro-tag::before {
+  content: "PRO";
+  position: absolute;
+  z-index: 1000;
+  color: white;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 3px 8px;
+  border-radius: 11px;
+  font-weight: 600;
+  background: #e04b4a;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.tp80::before {
+  top: 80% !important;
+}
+
+.wp-ultimate-csv-importer .pro-tag.active::before,
+.wp-ultimate-csv-importer .upgrade-pro-tag.active::before {
+  background: white;
+  color: #e04b4a;
+}
+
+.wp-ultimate-csv-importer .upgrade-pro-tag::before {
+  content: "UPGRADE TO PRO";
+}
+
+.wp-ultimate-csv-importer .upgrade-to-pro img {
+  margin-bottom: 20px;
+  width: 96px;
+  opacity: 0.8;
+}
+
+.wp-ultimate-csv-importer .upgrade-to-pro p {
+  font-size: 16px;
+  text-align: center;
+}
+
+.wp-ultimate-csv-importer .upgrade-to-pro p span {
+  font-weight: 500;
+}
+
+.wp-ultimate-csv-importer .csv-importer-panel.pro-tag {
+  border-radius: 6px;
+}
+
+.wp-ultimate-csv-importer.rtl .csv-importer-panel .export-section .form-group input[type=radio]+label {
+  padding-right: 40px;
+  padding-left: 0px;
+}
+
+.wp-ultimate-csv-importer.rtl .csv-importer-panel .export-section .form-group input[type=radio]+label:before {
+  right: 5px;
+}
+
+.wp-ultimate-csv-importer.rtl .csv-importer-panel .export-section .form-group input[type=radio]+label:after {
+  right: 10px;
+}
+
+.wp-ultimate-csv-importer.rtl .csv-importer-panel .export-section .form-group.row {
+  padding-right: 15px;
+}
+
+.wp-ultimate-csv-importer.rtl .csv-importer-panel .export-section .form-group.row input[type=radio]+label {
+  padding-right: 25px;
+}
+
+.wp-ultimate-csv-importer.rtl .fieldset input[type=checkbox]:checked+.switch-ios>i {
+  margin-right: 18px;
+}
+
+.wp-ultimate-csv-importer.rtl .form-group .input-icon {
+  left: 24px;
+  right: unset;
+}
+
+.wp-ultimate-csv-importer.rtl .importing-details .import-progress {
+  justify-content: space-between;
+}
+
+.wp-ultimate-csv-importer.rtl .importing-details .import-progress .progress-timing {
+  position: relative;
+}
+
+.wp-ultimate-csv-importer.rtl .wp-ultimate-csv-importer .importer-log .table td.text-left {
+  text-align: right !important;
+}
+
+.wp-ultimate-csv-importer.rtl .wp-ultimate-csv-importer .importer-log .table td.text-right {
+  text-align: left !important;
+}
+
+.wp-ultimate-csv-importer.rtl .table.table-mapping tbody tr td.action .manipulation-screen {
+  right: unset;
+  left: 25px;
+}
+
+.wp-ultimate-csv-importer.rtl .ajax-loader.loading:before,
+.wp-ultimate-csv-importer.rtl .ajax-loader.loading:after {
+  left: 0;
+  right: -35px;
+}
+
+.datepicker {
+  width: 300px;
+}
+
+.datepicker table {
+  width: 100%;
+}
+
+.datepicker table tbody>tr>td.active {
+  background-image: linear-gradient(to bottom, #00a699, #00736a) !important;
+}
+
+.datepicker table tbody>tr>td span.active {
+  background-image: linear-gradient(to bottom, #00a699, #00736a) !important;
+}
+
+.Toastify__toast-container--top-right {
+  top: 5em;
+  right: 1em;
+}
+
+.cardbanner {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: none; */
+  background-color: white;
+  padding: 1em 1em 1em !important;
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 0px;
+}
+
+.cardbanner:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: none; */
+}
+
+.cardprogress {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: none; */
+  background-color: white;
+  padding: 1em 1em 1em !important;
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 0px;
+}
+
+.cardprogress:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: none; */
+}
+
+.title {
+  color: #00a699;
+  text-align: center;
+  font-weight: 300;
+  font-size: medium
+}
+
+.divider {
+  border-bottom: 1px solid #00a699;
+}
+
+.tit {
+  font-size: medium;
+  font-style: italic;
+  background-color: white;
+}
+
+.text {
+  padding-left: 11%;
+}
+
+.basic-button {
+  background-color: #e04b4a;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  color: #fff !important;
+  border-color: #e04b4a !important;
+  background: #e04b4a !important;
+  -webkit-box-shadow: 0 1px 0 #e04b4a !important;
+  box-shadow: 0 1px 0 #e04b4a !important;
+  vertical-align: top;
+  width: 100%;
+}
+
+.filepond--panel-root {
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=csv-importer-free.css.map */

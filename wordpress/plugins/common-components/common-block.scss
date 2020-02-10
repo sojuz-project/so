@@ -4,9 +4,42 @@
  *
  * CSS for both Frontend+Backend.
  */
+ 
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+ 	.wp-block{
+			max-width:100% !important
+	}
+}
+ 
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
  .wp-block{
-	 	max-width:70% !important
- }
+			max-width:90% !important
+	}
+}
+ 
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+ .wp-block{
+			max-width:75% !important
+	}
+}
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 1124px) {
+ .wp-block{
+			max-width:70% !important
+	}
+}
+ 
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+ .wp-block{
+			max-width:65% !important
+	}
+}
+
+
 .sojuz-block {
 	font-family: Arial, Helvetica, sans-serif;
 	padding:0 5px 20px;
@@ -17,14 +50,13 @@
 		grid-area: main-pickers;
 		display:flex;
 		justify-content: flex-end;
-		align-items: baseline;
+		align-items: center;
 		background-color: #fff;
 		margin: 0 -5px;
 		padding: 0 5px;
 
 		.block-id{
 			color: black;
-			padding-left: 5px; 
 			background-color: #fff;
 			align-self: stretch;
 			flex: 1;
@@ -113,7 +145,7 @@
 
 		&.thumb{
 			grid-area: group-thumb;
-			border: 1px solid #b1b1b1;
+			border: 1px solid #ddd;    grid-template-columns: auto 33%;
 			.big{
 				overflow: hidden;
 				img{
@@ -137,6 +169,9 @@
 				}
 			}
 		}
+		&.call {
+			grid-area: group-call;
+		}
 	}
 	.remove{
 		grid-area: group-remove;
@@ -146,13 +181,14 @@
 		background-color: #ffffff50;
 		text-overflow: ellipsis;
 		border: 1px solid #d0d0d0;
-		padding: 5px;
+		padding: 10px;
 		margin: 0px;
 		border-radius: 5px;
 		margin-bottom:2px;
 	}
 
 	.color-picker-pin{
+		padding:1px;
 		display:flex;
     background-color: #fff;
     border: 1px solid #b1b1b1;
@@ -163,6 +199,8 @@
 		.innerText{
 			color: #444;
 			align-self: center;
+			font-size:12px;
+			margin:0 1em;
 		}
 		.color-marker{
 			padding: 6px;

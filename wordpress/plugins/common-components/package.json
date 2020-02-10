@@ -2,8 +2,12 @@
   "name": "common-components",
   "version": "1.0.0",
   "dependencies": {
+    "@wordpress/block-library": "^2.7.0",
     "@wordpress/components": "^7.4.0",
+    "@wordpress/editor": "^9.5.0",
     "nuka-carousel": "^4.5.8",
+    "react-grid-layout": "^0.16.6",
+    "react-rnd": "^10.0.0",
     "react-tooltip": "^3.10.0"
   }
 }

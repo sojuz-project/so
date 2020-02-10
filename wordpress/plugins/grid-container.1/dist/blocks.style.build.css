@@ -1,0 +1,417 @@
+@charset "UTF-8";
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.wp-block-sojuz-block-grid-container {
+  display: grid;
+  overflow: hidden; }
+  .wp-block-sojuz-block-grid-container h1 {
+    font-size: 3em; }
+  .wp-block-sojuz-block-grid-container h2 {
+    font-size: 2.5em; }
+  .wp-block-sojuz-block-grid-container h3 {
+    font-size: 2em; }
+  .wp-block-sojuz-block-grid-container h4 {
+    font-size: 1.5em; }
+  .wp-block-sojuz-block-grid-container .editor-rich-text .huge {
+    font-size: 2em; }
+  .wp-block-sojuz-block-grid-container .editor-rich-text .large {
+    font-size: 1.5em; }
+  .wp-block-sojuz-block-grid-container .editor-rich-text .normal {
+    font-size: 1em; }
+  .wp-block-sojuz-block-grid-container .editor-rich-text .small {
+    font-size: .7em; }
+  .wp-block-sojuz-block-grid-container .editor-rich-text .ultrasmall {
+    font-size: .4em; }
+  .wp-block-sojuz-block-grid-container .editor-rich-text .primary {
+    color: #0073a8; }
+  .wp-block-sojuz-block-grid-container .editor-rich-text .secondary {
+    color: #005075; }
+  .wp-block-sojuz-block-grid-container .editor-rich-text .dark-gray {
+    color: #111111; }
+  .wp-block-sojuz-block-grid-container .editor-rich-text .light-gray {
+    color: #767676; }
+  .wp-block-sojuz-block-grid-container .editor-rich-text .white {
+    color: #ffffff; }
+
+.drag-greed {
+  display: grid;
+  grid-template-columns: repeat(50, 1fr);
+  padding: 1px; }
+  .drag-greed .component {
+    position: relative; }
+    .drag-greed .component .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+      .drag-greed .component .overlay.primary {
+        background-color: #0073a8; }
+      .drag-greed .component .overlay.secondary {
+        background-color: #005075; }
+      .drag-greed .component .overlay.dark-gray {
+        background-color: #111111; }
+      .drag-greed .component .overlay.light-gray {
+        background-color: #767676; }
+      .drag-greed .component .overlay.white {
+        background-color: #ffffff; }
+    .drag-greed .component .img-wrapper {
+      margin: 0;
+      width: initial;
+      height: initial; }
+      .drag-greed .component .img-wrapper img {
+        width: 100%; }
+
+.block-editor__container img {
+  vertical-align: bottom; }
+
+.block-editor__container .img-button {
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 42px); }
+
+.components-popover__content {
+  padding: 5px; }
+
+.list-data-elements {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  margin-bottom: 10px; }
+
+.selector-item {
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  background: #fbfbfb;
+  -ms-flex-align: center;
+      align-items: center;
+  font-size: 11px;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.selector-item:hover {
+  background: #0073a8;
+  color: #fff;
+  cursor: pointer; }
+
+.component-wrapper-image {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAM0lEQVQoU2NkIAIwEqGGAa5o//79/x0dHbHyUUyCKUTXgGEdugKQc0gziWg34fIpUUEAAFeXJApU9iLNAAAAAElFTkSuQmCC) repeat;
+  width: 100%;
+  height: 100%; }
+
+.component-selected {
+  border: 1px solid #0073a8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: -1px !important;
+  border-radius: 3px; }
+
+.components-picker {
+  display: -ms-flexbox;
+  display: flex; }
+  .components-picker button {
+    margin: 2px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
+
+/* DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID */
+/* DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID */
+/* DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID */
+/* DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID DRAG GRID */
+.grid-mode-on {
+  margin-left: 5%;
+  margin-right: 5%;
+  left: 0px;
+  padding: 0 !important;
+  /* Blue selections */ }
+  .grid-mode-on .react-draggable {
+    background-color: #ffffffaa; }
+    .grid-mode-on .react-draggable .component {
+      position: relative;
+      z-index: -1;
+      height: 100%; }
+      .grid-mode-on .react-draggable .component .overlay {
+        -webkit-filter: opacity(25%);
+                filter: opacity(25%); }
+      .grid-mode-on .react-draggable .component .editor-rich-text {
+        border: 1px dotted rgba(0, 0, 0, 0.472);
+        pointer-events: none;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        -webkit-filter: blur(3px);
+                filter: blur(3px); }
+        .grid-mode-on .react-draggable .component .editor-rich-text h1 {
+          color: #00000055; }
+        .grid-mode-on .react-draggable .component .editor-rich-text h2 {
+          color: #00000055; }
+        .grid-mode-on .react-draggable .component .editor-rich-text h3 {
+          color: #00000055; }
+      .grid-mode-on .react-draggable .component .img-button {
+        display: none; }
+      .grid-mode-on .react-draggable .component .img-wrapper {
+        height: 100% !important;
+        opacity: .3;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJUlEQVQoU2NkYGD4z4AJGNGFQAJDQSEWv2C6G8N3UF0YHhxAhQBLjgoG6DTb1AAAAABJRU5ErkJggg==) repeat; }
+        .grid-mode-on .react-draggable .component .img-wrapper img {
+          opacity: .7;
+          -o-object-fit: cover;
+             object-fit: cover;
+          height: inherit;
+          width: -webkit-max-content;
+          width: -moz-max-content;
+          width: max-content; }
+  .grid-mode-on .blueprint-grid {
+    position: absolute;
+    width: calc(100% + 22px);
+    height: 100%;
+    top: 0; }
+    .grid-mode-on .blueprint-grid .row {
+      width: 100%;
+      position: absolute;
+      border-bottom: 1px dotted #73737324; }
+      .grid-mode-on .blueprint-grid .row.i0 {
+        border-bottom: 1px dotted #0869c39d; }
+    .grid-mode-on .blueprint-grid .column {
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      border-left: 1px dotted #73737324; }
+      .grid-mode-on .blueprint-grid .column.i0 {
+        border-left: 1px dotted #0869c39d; }
+      .grid-mode-on .blueprint-grid .column.i50 {
+        border-left: 1px dotted #0869c39d; }
+  .grid-mode-on .block-editor-block-list__layout .block-editor-block-list__block ::-moz-selection,
+  .grid-mode-on .block-editor-block-list__layout .block-editor-block-list__block.is-multi-selected .block-editor-block-list__block-edit:before {
+    background: #fff; }
+  .grid-mode-on .block-editor-block-list__layout .block-editor-block-list__block ::selection,
+  .grid-mode-on .block-editor-block-list__layout .block-editor-block-list__block.is-multi-selected .block-editor-block-list__block-edit:before {
+    background: #fff; }
+
+.resize-handler.top {
+  height: 20px !important;
+  top: -10px !important; }
+  .resize-handler.top:before {
+    top: 10px;
+    left: -10%;
+    width: 120%;
+    height: 1px; }
+
+.resize-handler.bottom {
+  height: 20px !important;
+  bottom: -10px !important; }
+  .resize-handler.bottom:before {
+    bottom: 10px;
+    left: -10%;
+    width: 120%;
+    height: 1px; }
+
+.resize-handler.left:before {
+  left: 5px;
+  top: -10%;
+  height: 120%;
+  width: 1px; }
+
+.resize-handler.right:before {
+  left: 5px;
+  top: -10%;
+  height: 120%;
+  width: 1px; }
+
+.resize-handler:before {
+  content: "";
+  position: absolute;
+  border: .1px dashed #8a8a8a; }
+
+.resize-handler:hover {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAHklEQVQYV2NkYGBgOHPmzH8TExNGRhgDJMgIImCyAOO4C2dVc8lCAAAAAElFTkSuQmCC) repeat; }
+
+/* GRID LAYOUT COMPONENT */
+.react-grid-layout {
+  width: 236px;
+  margin: 0 auto;
+  position: relative;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAYAAADAp4fuAAAAGklEQVQYV2NkYGD4z8DAwMiABFA4MHG6CQIAkdsBCLFfrlgAAAAASUVORK5CYII=) repeat; }
+  .react-grid-layout .react-grid-item {
+    background: #fefefe;
+    border: 1px solid #d3d3d3;
+    outline: 1px solid #fff;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column;
+        flex-flow: column;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    color: #888;
+    margin: 0;
+    overflow: hidden;
+    padding: 14px 0;
+    cursor: move;
+    /* fallback if grab cursor is unsupported */
+    cursor: -webkit-grab;
+    cursor: grab; }
+    .react-grid-layout .react-grid-item svg {
+      width: 90%;
+      fill: #e7e6e6; }
+    .react-grid-layout .react-grid-item .react-resizable-handle {
+      -ms-touch-action: none;
+          touch-action: none;
+      background: #0085ba;
+      color: #fff;
+      position: absolute;
+      right: 1px;
+      bottom: 1px;
+      width: 14px;
+      display: block;
+      height: 14px;
+      font-size: 16px;
+      padding: 0px 0px;
+      line-height: 11px;
+      cursor: pointer; }
+    .react-grid-layout .react-grid-item .react-resizable-handle:after {
+      vertical-align: -2px;
+      content: "⇲"; }
+    .react-grid-layout .react-grid-item .remove {
+      -ms-touch-action: none;
+          touch-action: none;
+      background: #d84848;
+      color: #fff;
+      position: absolute;
+      left: 1px;
+      top: 1px;
+      width: 14px;
+      display: block;
+      height: 14px;
+      font-size: 16px;
+      padding: 0px 0px;
+      line-height: 11px;
+      cursor: pointer;
+      text-align: center; }
+  .react-grid-layout .react-draggable-dragging {
+    border: 1px solid #ccc;
+    z-index: 1; }
+  .react-grid-layout .react-grid-placeholder {
+    z-index: -1;
+    opacity: 0.5; }
+  .react-grid-layout button {
+    width: 100%;
+    text-align: center;
+    display: block; }
+
+button.full-width {
+  width: 100%;
+  margin-bottom: 3px; }
+
+.components-toolbar {
+  cursor: pointer; }
+  .components-toolbar.active {
+    background-color: #f87a75; }
+  .components-toolbar span.dashicons {
+    display: -ms-flexbox;
+    display: flex;
+    width: 36px;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    height: auto; }
+
+.grid-mode-button {
+  font-family: sans-serif;
+  font-size: 11px;
+  margin: auto 10px auto -5px; }
+
+.badge {
+  position: absolute;
+  font-size: 11px;
+  font-family: sans-serif;
+  color: #fff;
+  padding: 2px 5px 0;
+  border-radius: 2px;
+  height: initial !important; }
+  .badge .dashicons {
+    font-size: 14px;
+    vertical-align: -3px;
+    margin-bottom: -2px; }
+  .badge.mapql {
+    top: 2px;
+    right: 2px;
+    background-color: #717f88; }
+  .badge.set-data-source {
+    padding: 3px 10px 0;
+    border-radius: 4px;
+    top: calc(50% - 1em);
+    left: calc(50% - 7.8em);
+    font-size: 14px;
+    background-color: #717f88; }
+  .badge.remove-component {
+    background-color: #771026;
+    bottom: 2px;
+    left: 2px;
+    cursor: pointer; }
+    .badge.remove-component:hover {
+      background-color: #b32544; }
+
+.new-section-bar {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+  margin: 15px 0 5px;
+  padding: 5px;
+  z-index: 10;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-top: 1px solid #999;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  -ms-flex-align: center;
+      align-items: center;
+  font-size: 14px;
+  font-family: sans-serif; }
+  .new-section-bar > * {
+    margin-left: 5px !important; }
+  .new-section-bar .components-base-control {
+    margin: 0; }
+  .new-section-bar .components-base-control__field {
+    margin: 0; }
+    .new-section-bar .components-base-control__field .components-form-toggle {
+      top: 3px;
+      margin-right: 8px; }
+    .new-section-bar .components-base-control__field .components-toggle-control__label {
+      margin-bottom: 0; }
+
+.new-section-bar > * {
+  margin-left: 3px; }
+
+.components-button-group {
+  display: -ms-flexbox;
+  display: flex; }
+  .components-button-group .components-button {
+    -ms-flex: 1;
+        flex: 1;
+    -ms-flex-pack: center;
+        justify-content: center; }
+
+.dropdown-list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }

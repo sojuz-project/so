@@ -1,45 +1,67 @@
 version: '3.3'
 
+# This file is used only for local development!
 services:
+  frontend:
+    command: bash -c "yarn install --check-files && yarn patch-package && npm run dev"
+  graph:
+    command: bash -c "yarn install --check-files && yarn patch-package && npm run dev"
   wordpress:
     image: wordpressnode
-    build: 
+    build:
       context: .
       dockerfile: ./Docker/wordpressnode.Dockerfile
-  traefik:
-    image: traefik:latest
-    restart: unless-stopped
-    ports:
-      - 80:80
-      - 443:443
+  # traefik:
+  #   image: traefik:latest
+  #   restart: unless-stopped
+  #   ports:
+  #     - 80:80
+  #     - 443:443
+  #   networks:
+  #     - web
+  #   volumes:
+  #     - ./traefik/${ENVIRONMENT}.toml:/traefik.toml
+  #     - ./traefik/ssl:/ssl
+  #     - ./traefik/acme.json:/acme.json
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #   labels: 
+  #     - "traefik.frontend.rule=Host:${HOST};PathPrefixStrip:/router"
+  #     - "traefik.frontend.auth.basic=webartisan:$$2y$$05$$dtSK0Lm6R0LrSKfMEYVGD.9tY/Od6R.f7TfJE2M6VIpQBK25xre3G"
+  #     - "traefik.port=8080"
+  #     - "traefik.enable=true"
+  #     - "traefik.docker.network=web"
+  #     - "traefik.passHostHeader=true"
+  #     - "traefik.frontend.entryPoints=http,https"
+  #     - "traefik.tags=traefiks"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
     networks:
-      - web
+      internal:
+    links:
+      - db
+    depends_on:
+      - db
+    ports:
+      - 8888:80
+    env_file:
+      - ./env/mysql.env
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=false"
+  kibana:
+    image: kibana:7.1.0
     volumes:
-      - ./traefik/${ENVIRONMENT}.toml:/traefik.toml
-      - ./traefik/ssl:/ssl
-      - ./traefik/acme.json:/acme.json
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    labels: 
-      - "traefik.frontend.rule=Host:${HOST};PathPrefixStrip:/router"
-      - "traefik.frontend.auth.basic=sojuz:$$2y$$05$$dtSK0Lm6R0LrSKfMEYVGD.9tY/Od6R.f7TfJE2M6VIpQBK25xre3G"
-      - "traefik.port=8080"
+     - ./kibana/config.yml:/usr/share/kibana/config/kibana.yml
+    depends_on:
+     - elasticsearch
+    restart: unless-stopped
+    networks:
+      web:
+    labels:
+      - "traefik.frontend.rule=Host:${HOST};PathPrefixStrip:/kibana"
+      - "traefik.frontend.auth.basic=geochat:$$2y$$05$$siLr2Ko7GGi6R2TmdwP1POInH7JE6ec2j6sxmIb2l1GM2P2UkeLcu"
+      - "traefik.port=5601"
       - "traefik.enable=true"
       - "traefik.docker.network=web"
       - "traefik.passHostHeader=true"
       - "traefik.frontend.entryPoints=http,https"
-      - "traefik.tags=traefiks"
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
-    networks:
-      web:
-    links: 
-      - db
-    depends_on:
-      - db
-    ports: 
-      - 8888:80
-    env_file: 
-      - .env
-    restart: unless-stopped
-    labels:
-      - "traefik.enable=false"

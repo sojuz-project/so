@@ -1,0 +1,1043 @@
+.wpsmartimport-plugin h2.plugin-title {
+   margin-bottom: 5px;
+}
+.wpsmartimport-plugin h1.page-title {
+    padding: 0;
+    margin: 0px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #e14d43;
+}
+.wsi-body-header-title {
+    padding: 10px 0;
+}
+.wpsi-body {
+    margin: 15px 15px 15px 0px;
+    border-radius: 5px;
+}
+.wpsi-portlet {
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding: 15px 20px 17px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #e7ecf1;
+}
+.wpsi-portlet>.wpsi-portlet-title{
+    border-bottom: 1px solid #eef1f5;
+    border-bottom: 1px solid #eee; */
+    margin-bottom: 10px;
+    min-height: 41px;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    -ms-border-radius: 4px 4px 0 0;
+    -o-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+.wpsi-portlet>.wpsi-portlet-title:after, .wpsi-portlet>.wpsi-portlet-title:before{
+    content: " ";
+    display: table;
+}
+.wpsi-portlet>.wpsi-portlet-title>.caption {
+    color: #666;
+    padding: 10px 0;
+    float: left;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 18px;
+    padding: 10px 0;
+}
+.wpsi-portlet>.wpsi-portlet-title>.caption>.caption-subject{
+    font-size: 20px;
+    font-weight: 600;
+}
+.wpsi-portlet>.wpsi-portlet-title>.actions{
+    padding: 6px 0 14px;
+    float: right;
+    display: inline-block;
+}
+.wpsmartimport-plugin  .actions{
+    cursor: pointer;   
+}
+.wpsmartimport-plugin input:out-of-range {
+    border: 2px solid red;
+}
+.wpsi-container {
+    margin: 0px 50px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.wpsi-portlet .wpsi-portlet-body {
+    padding-top: 8px;
+    clear: both;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    -ms-border-radius: 0 0 4px 4px;
+    -o-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+}
+.wpsi-portlet>.wpsi-portlet-title>.actions  a{
+    display: inline;
+    text-decoration: none;
+    border: 1px solid #e14d43;
+    border-radius: 50px;
+    color: #e14d43;
+    font-size: 15px;
+    padding: 10px;
+    transition: all .5s ease;
+}
+.wpsi-portlet>.wpsi-portlet-title>.actions a:hover {
+    padding-right: 25px;
+}
+.wpsi-portlet>.wpsi-portlet-title>.actions  button{
+    border: none;
+    padding: 10px;
+    margin: -8px;
+    margin-left: 10px;
+    border-radius: 20px;
+    color: #fff;
+    background: #3498db;
+    cursor: pointer;
+    display: inline;
+}
+.wpsmartimport-plugin  #ajax-wait {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('../images/ajax_spininer.gif') 
+                50% 50% 
+                no-repeat;
+}
+.wpsmartimport-plugin  .upload-button-group {
+    text-align: center;
+}
+.wpsmartimport-plugin  button.button-upload {
+    height: 65px;
+    width: 225px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+}
+.wpsmartimport-plugin  .file-input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+.wpsmartimport-plugin  .file-input-wrapper > input[type="file"] {
+    display: none;
+}
+.wpsmartimport-plugin  .tab-content{
+    display: none;
+}
+.wpsmartimport-plugin  .tab-content.current{
+    display: block;
+    padding: 15px;
+}
+.wpsmartimport-plugin .wpsi-button.file-upload-btn {
+    padding: 20px 70px;
+    cursor: pointer;
+    color: #e14d43;
+    border: 2px solid;
+    font-size: 17px;
+    border-radius: 50px;
+    font-weight: 500;
+    vertical-align: middle;
+    background: transparent;
+}
+.wpsi-choose-post-type {
+    text-align: center;
+}
+.wpsi-choose-post-type h3 {
+	color: green;
+}
+.wpsi-choose-post-type .wpsi-post-list-contaner {
+    margin-top: 33px;
+}
+.wpsi-body label{
+    display: block;
+    margin-bottom: 5px;
+}
+.wpsmartimport-plugin .input-group label{
+	font-size: 15px;
+    font-weight: 700;
+}
+.wpsmartimport-plugin .after-success-upload {
+    text-align: center;
+    padding: 10px;
+    margin: 15px 0px;
+    font-size: 20px;
+}
+.wpsmartimport-plugin .inline-form-control {
+    width: 50%;
+    height: auto;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    margin: 5px;
+}
+.wpsmartimport-plugin .wpsi-form-control {
+    width: 100%;
+    height: auto;
+    min-height: 37px;
+    padding: 6px;
+    font-size: 15px;
+    border-radius: 5px;
+    margin: 5px 0;
+    display: block;
+}
+.wpsmartimport-plugin .wpsi-form-control.input-grp {
+    width: 94%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.wpsmartimport-plugin .short {
+    display: inline-block;
+    width: 5%;
+    vertical-align: middle;
+    text-align: center;
+}
+.wpsmartimport-plugin .wpsi-input-lg{
+    height: 46px !important;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+.wpsmartimport-plugin .input-group {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+    align-items: center;
+}
+.wpsmartimport-plugin .input-group-inline {  
+    padding: 10px;
+}
+.wpsmartimport-plugin .input-group-append {
+    margin-left: -1px;
+}
+.wpsmartimport-plugin .get_post_types_list {
+    display: table;
+}
+.wpsmartimport-plugin .input-group-append, .input-group-prepend {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.wpsmartimport-plugin .wpsi-input-with-button {
+    width: 86%;
+    margin-right: 10px;
+}
+/*.wpsi-post-container {
+    width: 100%;
+}*/
+.wpsi-post-field-container{
+     width: 100%;
+    display: flex;   
+}
+.wpsi-post-list-contaner {
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.wpsi-step-next {
+    display: block;
+    clear: both;
+}
+.wpsmartimport-plugin button.wpsi-button.disabled{
+    background: gray;
+    cursor: not-allowed;
+}
+.wpsmartimport-plugin button.wpsi-button-big {
+    height: 55px;
+    width: 235px;
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+    background: #fff;
+    color: #997c88;
+}
+.wpsmartimport-plugin a.wpsi-button-big{
+    background: #3498db;
+    color: #fff;
+    text-transform: capitalize;
+    border: 1px solid;
+    border-radius: unset;
+    text-decoration: none;
+    width: 207px;
+    height: 25px;
+    line-height: 25px;
+    padding: 14px;
+    font-size: 20px;
+}
+.wpsmartimport-plugin .wpsi-button.active{
+	background: #e14d43;	
+	color: #fff;
+}
+.wpsmartimport-plugin .wpsi-button.active::after{
+    content: '';
+    position: absolute;
+    left: 43%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #e14d43;
+    clear: both;
+}
+.wpsmartimport-plugin .wpsi-button:disabled {
+    background: #dddddd;
+}
+.wpsmartimport-plugin .button-fixed {
+    width: 35px;
+    height: 35px;
+    position: fixed;
+    background: #f1f1f1;
+    border: 1px solid;
+}
+.wpsmartimport-plugin button.btn-next {
+    margin: 20px 0;
+    background: #3498db;
+    color: #fff;
+    text-transform: capitalize;
+    border: 1px solid;
+    border-radius: unset;
+}
+.wpsmartimport-plugin button.wpsi-button.red{
+    background: red;
+}
+/*/////////////////////////*/
+
+.wpsi-pagination button {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    background: transparent;
+    cursor: pointer;
+}
+.wpsi-pagination a:hover{
+    background-color: #ddd;
+}
+.wpsmartimport-plugin input.node_num {
+    width: 30%;
+}
+.wpsmartimport-plugin button.button-previous {
+    float: left;
+    margin-left: 5px;
+}
+.wpsmartimport-plugin button.button-next {
+    float: right;
+    margin-right: 5px;
+}
+.wpsmartimport-plugin span.total-element {
+    font-size: 17px;
+    font-weight: 600;
+}
+/*/////////////////////////*/
+
+.wpsmartimport-plugin .wpsi-element-view {
+    display: flex;
+    width: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.wpsmartimport-plugin .xml_element_list {
+    width: 33%;
+}
+.wpsmartimport-plugin .wpsi-nodes-preview {
+    width: 67%;
+    margin-left: 5px;
+}
+.wpsmartimport-plugin .wpsi-template-wraper {
+    display: flex;
+}
+.wpsmartimport-plugin .wpsi-nodes-preview-sticky > .wpsi-nodes-preview{
+    width: 100%;
+    max-height: 450px;
+    overflow-y: auto;
+}
+.wpsmartimport-plugin .wpsi-template-container {
+    width: 66%;
+    float: left;
+}
+.wpsi-nodes-preview-sticky {
+    width: 26%;
+    max-height: 450px;
+    position: fixed;
+    margin-left: 5px;
+    padding: 10px;
+    background: #fff;
+    right: 20px;
+    border-radius: 5px;
+    z-index: 1;
+}
+.wpsmartimport-plugin .node-element-dragdrop.active-node{
+    overflow-x: scroll;
+    z-index: 999;
+    max-height: 400px;
+}
+.wpsmartimport-plugin .wpsi-nodes-preview .node-element.hidden-node{
+    display: none;
+}
+.wpsmartimport-plugin .draggable .xml-tag.opening .xml-tag-name{
+    cursor: pointer;
+}
+.wpsmartimport-plugin .draggable .xml-tag.opening .xml-tag-name:hover{
+    color: #e14d43;
+    transition: all .3s ease;
+}
+.wpsmartimport-plugin .xml_element_list .wpsi-root-element{
+    display: block;
+    padding: 10px;
+    font-size: medium;
+    text-decoration: none;
+    background: #f5f5f5;
+    margin: 5px;
+    color: #3e3838;
+}
+.wpsmartimport-plugin .xml_element_list a.wpsi-root-element:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+.wpsmartimport-plugin .xml_element_list a.wpsi-root-element:hover {
+    background: #e14d43;
+    color: #fff;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+} 
+.wpsmartimport-plugin .xml_element_list a.wpsi-root-element.selected {
+    background: #e14d43;
+    color: #fff;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+.wpsmartimport-plugin .xml_element_list  a.wpsi-root-element span.elm_name {
+    float: left;
+    width: 85%;
+}
+.wpsmartimport-plugin .xml_element_list  a.wpsi-root-element span.elm_cnt {
+    float: left;
+    width: 10%;
+}
+.wpsmartimport-plugin #tooltip
+{
+    text-align: center;
+    color: #fff;
+    background: #3e4246b5;
+    position: absolute;
+    z-index: 100;
+    padding: 15px;
+}
+.wpsmartimport-plugin #tooltip:after /* triangle decoration */
+{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #3e4246b5;
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    margin-left: -10px;
+}
+.wpsmartimport-plugin #tooltip.top:after
+{
+    border-top-color: transparent;
+    border-bottom: 10px solid #3e4246b5;
+    top: -20px;
+    bottom: auto;
+}
+
+.wpsmartimport-plugin #tooltip.left:after
+{
+    left: 10px;
+    margin: 0;
+}
+
+.wpsmartimport-plugin #tooltip.right:after
+{
+    right: 10px;
+    left: auto;
+    margin: 0;
+}
+.wpsmartimport-plugin [rel='tooltip'] {
+    margin-left: 5px;
+    cursor: help;
+}
+.wpsmartimport-plugin .dashicons-editor-help{
+    
+    color: #adadad;
+}
+.wpsmartimport-plugin .wpsi-post-res{
+    padding: 10px;
+    text-align: center;
+}
+.wpsmartimport-plugin .wpsi-post-res h3{
+    text-transform: uppercase;
+}
+.wpsmartimport-plugin .wpsi-post-res-success h2{
+    color: #81ca97;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+}
+.wpsi-post-res-success h3{
+    color: #81ca97;
+}
+.wpsi-post-res-error h2{
+    color: #f74c4c;
+}
+.wpsi-note {
+    color: #868e96;
+}
+.wpsi-error-color{
+    color: red;
+    text-align: center;
+}
+.wpsi-f-left{
+    float: left;
+}
+.wpsi-f-right{
+    float: right;
+}
+
+/************/
+#wpsi-accordion {
+    padding:0;
+}
+#wpsi-accordion li {
+    list-style:none;
+    }
+#wpsi-accordion li.content {
+    margin:0;
+    padding: 10px;
+    border: 1px solid #efefef;
+    background: #FFF;
+}
+#wpsi-accordion li.title {
+    padding:10px;
+    font-size:1.2em;
+    line-height:2em;
+    color:#FFF;
+    background: #3498db;
+    border-bottom: 1px solid #2980b9;
+    cursor: pointer;
+    }
+#wpsi-accordion li.title.active-tab {
+    background: #e14d43;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+}
+#wpsi-accordion .hide {
+    display:none;
+}
+.wpsi-clear{
+    clear: both;
+}
+.wpsmartimport-plugin .clear{
+    clear: both;
+    content: '';
+    display: block;   
+}
+.wpsi-post-field-list-contaner{
+    width: 100%;
+    display: block;
+}
+.wpsmartimport-plugin b.imp-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #504a4a;
+}
+.wpsmartimport-plugin a{
+    text-decoration: none;
+}
+/** wpsi-Model CSS Start **/
+/* Outer */
+.wpsi-popup {
+    width:100%;
+    height:100%;
+    display:none;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:rgba(0,0,0,0.75);
+    z-index: 999;
+}
+ 
+/* Inner */
+.wpsi-popup-inner {
+    max-width:700px;
+    width:90%;
+    max-height: 560px;
+    padding:40px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%, -50%);
+    transform:translate(-50%, -50%);
+    box-shadow:0px 2px 6px rgba(0,0,0,1);
+    border-radius:3px;
+    background:#fff;
+    overflow-y: auto;
+}
+ 
+/* Close Button */
+.wpsi-popup-close {
+    width: 35px;
+    height:30px;
+    padding-top:4px;
+    display:inline-block;
+    position:absolute;
+    top: 50%;
+    right: 18%;
+    transition:ease 0.25s all;
+    -webkit-transform:translate(50%, -50%);
+    transform:translate(50%, -50%);
+    border-radius:1000px;
+    background:rgba(0,0,0,0.8);
+    font-family:Arial, Sans-Serif;
+    font-size:20px;
+    text-align:center;
+    line-height:100%;
+    color:#fff;
+}
+ 
+.wpsi-popup-close:hover {
+    -webkit-transform:translate(50%, -50%) rotate(180deg);
+    transform:translate(50%, -50%) rotate(180deg);
+    background:rgba(0,0,0,1);
+    text-decoration:none;
+}
+/** wpsi-Model CSS Start **/
+.wpsi-img-thumb img {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+.wpsmartimport-plugin .block-title {
+    border-bottom: 1px solid #eee;
+    border-radius: 4px 4px 0 0;
+    padding-bottom: 10px;
+    color: gray;
+}
+.wpsi-portlet-single-block .block-title {
+    color: #666666;
+    font-weight: 700;
+    border: none;
+    padding: 0;
+}
+.wpsi-portlet-single-block {
+    margin-bottom: 10px;
+}
+.wpsi-portlet-single-block .wpsi-single-block-content{
+    margin-left: 10px;
+    clear: both;
+}
+.wpsi-portlet-single-title:before{
+    content: '';
+    display: table;   
+}
+.wpsi-portlet-single-title .caption {
+    float: left;
+    font-weight: 700;
+    font-size: 1em;
+    margin: 1.33em 0;
+    color: #666666;
+}
+.wpsi-portlet-single-title .actions {
+    float: right;
+}
+.wpsi-portlet-single-title .actions button {
+    border: none;
+    padding: 6px;
+    color: #fff;
+    background: #e14d43;
+    border-radius: 50px;
+    opacity: .2;
+    transition: all .7s ; 
+}
+.wpsi-portlet-single-title .actions button:hover,.wpsi-portlet-single-title .actions span:hover{
+    opacity: 1;
+}
+.wpsi-portlet-single-title .actions span {
+    font-size: 25px !important;
+    opacity: .7;
+    transition: all .7s ; 
+    cursor: pointer;
+}
+.wpsmartimport-plugin #woocommerce-product-data .hndle label{
+    display: inline;
+}
+.wpsi-inner-block .inner-content{
+    padding-left: 17px;
+    margin: 10px;
+}
+.wpsi-post-cat-listing {
+    padding: 7px;
+    border: 1px solid #eee;
+    margin: 5px 0;
+}
+.wpsi-post-cat-listing a{
+    padding: 5px;
+}
+.wpsi-button {
+    border: none;
+    padding: 7px 15px;
+    border-radius: 16px;
+    color: #fff;
+    background: #3498db;
+    cursor: pointer;
+    display: inline-block;
+    transition: all .3s;
+    position: relative;
+}
+.wpsi-button.wpsi-button-block{
+    display:block;   
+}
+.wpsi-button:hover{
+    background: #e14d43;
+    color: #fff;
+}
+.wpsi-col-6 {
+    width: 49%;
+    float: left;
+    margin-right: 5px;
+}
+.wpsi-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.wpsi-table td, .wpsi-table th {
+    padding: 8px;
+    text-align: center;
+}
+.wpsi-table.wpsi-table-border td, .wpsi-table.wpsi-table-border th {
+    border: 1px solid #ddd;
+}
+.wpsi-table.wpsi-table-border tr:nth-child(even){background-color: #f2f2f2;}
+
+.wpsi-table.wpsi-table-hoverable tbody tr:hover {background-color: #ddd;}
+
+.wpsi-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}   
+.wpsi-table thead.head-color-green th{
+    background-color: #4CAF50;
+    color: white;
+}
+.wpsi-table thead.head-color-red th{
+    background-color: #e14d43;
+    color: white;
+}
+.wpsi-table thead.head-color-blue th{
+    background-color: #3498db;
+    color: white;
+}
+.wpsi-table.table-fixheader{
+        table-layout: fixed; 
+} 
+.wpsi-table.table-fixheader thead {
+    display: table;
+    width: calc(100% - 18px);
+}
+.wpsi-table.table-fixheader th, td {
+    padding: 5px 10px;
+}
+
+.wpsi-nodes-preview-sticky .wpsi-table.table-fixheader tbody {
+    height: 270px;
+    overflow: auto;
+    overflow-x: hidden;
+    display: block;
+    width: 100%;
+}
+.wpsi-table.table-fixheader tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+.wpsmartimport-plugin .remove-field{
+    color: #e14d43;
+    cursor: pointer;
+}
+/*Customize Wordpress Table*/
+.wpsmartimport-plugin .wp-list-table .column-id{
+    width: 5%;
+}
+.wpsmartimport-plugin .wp-list-table .column-name{
+    width: 40%;
+}
+.wpsmartimport-plugin .wp-list-table.imports .column-post_type{
+    width: 15%;
+}
+.wpsmartimport-plugin .wp-list-table.imports .column-action{
+    width: 15%;
+}
+.wpsmartimport-plugin .wp-list-table.imports .import-action {
+    background: #f1f1f1;
+    padding: 10px;
+    border: 1px solid gray;
+    color: black;
+}
+.wpsmartimport-plugin .wp-list-table.imports .import-action:hover {
+    background: #3498db;
+    color: #fff;
+    border: none;
+}
+.wpsmartimport-plugin .text-center { text-align: center; }
+.wpsmartimport-plugin .text-left { text-align: left; }
+.wpsmartimport-plugin .text-right { text-align: right; }
+.wpsmartimport-plugin .error-text { color: red; }
+
+.wpsmartimport-plugin .list-table thead th:first-child, .list-table tbody td:first-child{
+    width: 40%;
+    font-weight: 600;
+}
+/*response alert*/
+.wpsmartimport-plugin .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+.wpsmartimport-plugin .alert.success {background-color: #4CAF50;}
+
+.wpsmartimport-plugin .alert_closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.wpsmartimport-plugin .alert_closebtn:hover {
+    color: black;
+}
+.wpsmartimport-plugin .timer-block {
+    text-align: center;
+    overflow-y: auto;
+}
+.wpsmartimport-plugin .overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+.wpsmartimport-plugin .overlay.overlay-display{
+    display: block;
+}
+.wpsmartimport-plugin .overlay-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 30px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+.wpsmartimport-plugin #img-loding{
+    display: block;
+    margin: 0 auto;
+}
+.wpsmartimport-plugin .lock {
+    background: rgba( 255, 255, 255, .8 ) url(../images/ajax_spininer.gif) 50% 50% no-repeat;
+    pointer-events: none;
+    cursor: none;
+}
+.wpsmartimport-plugin ul.response {
+    font-size: 16px;
+    text-align: left;
+    list-style: square;
+}
+.wpsmartimport-plugin ul.response li {
+    margin-bottom: 5px;
+}
+.wpsmartimport-plugin ul.response ul{
+    padding-left: 15px;
+    list-style: circle;
+}
+/*Progressbar */
+.wpsmartimport-plugin #response-content {
+   width: 98%;
+   background-color: #ddd;
+   padding: 10px;
+   margin: 10px 0px;
+}
+.wpsmartimport-plugin #myBar {
+  width: 0%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  transition: width .5s;
+  margin-bottom: 10px;
+}
+.wpsmartimport-plugin .flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wpsmartimport-plugin .flex-container > div {
+  background-color: #ffffff;
+  width: 18%;
+  margin: 10px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+}
+.wpsmartimport-plugin .close-btn{
+    position: absolute;
+    top: -36px;
+    right: 0;
+    padding: 9px 13px;
+    cursor: pointer;
+    text-decoration: none;
+    background: #363b3f;
+    border-radius: 59%;
+    color: #fff;
+}
+.wpsmartimport-plugin .meter { 
+    height: 20px;  /* Can be anything */
+    position: relative;
+    /*background: #363b3f;*/
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 5px;
+    box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+.wpsmartimport-plugin .meter > span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: rgb(43,194,83);
+  background-image: linear-gradient(center bottom, rgb(43,194,83) 37%, rgb(84,240,84) 69%);
+  box-shadow: 
+    inset 0 2px 9px  rgba(255,255,255,0.3),
+    inset 0 -2px 6px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+.wpsmartimport-plugin .meter > span:after, .animate_progress > span > span {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, 
+    rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+  z-index: 1;
+  background-size: 50px 50px;
+  animation: move 2s linear infinite;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  overflow: hidden;
+}
+.wpsmartimport-plugin .animate_progress > span:after {
+  display: none;
+}
+.wpsmartimport-plugin .progress-text {
+    color: #fff;
+    font-weight: 600;
+}
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes expandWidth {
+   0% { width: 0; }
+   100% { width: auto; }
+}
+/* End Progressbar */
+.wpsmartimport-plugin #Response-content{
+    padding: 10px;
+    background: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.wpsmartimport-plugin #Response-content p {
+    font-size: 15px;
+}
+.wpsmartimport-plugin .display-none {
+    display: none;
+    content: '';
+    clear: both;
+}
+
+/*-----------------------*/
+.wpsmartimport-plugin .xml-expander {
+    display: inline-block;
+    width: 12px;
+    margin-left: -12px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    font-family: monospace;
+    line-height: 100%;
+    text-align: left;
+    color: red;
+}
+.wpsmartimport-plugin .xml-content.collapsed {
+    display: none;
+}
+.wpsmartimport-plugin .xml-content {
+    padding-left: 14px;
+    max-width: 500px;
+    overflow: hidden;
+}
+.wpsmartimport-plugin .xml-tag {
+    display: inline;
+}
+.wpsmartimport-plugin .xml-content.textonly.short {
+    padding-left: 0px;
+    display: inline;
+}
+.wpsmartimport-plugin .xml-tag-name{
+    color: #e14d43;
+    font-weight: 500;
+}
+/*-----------------------*/

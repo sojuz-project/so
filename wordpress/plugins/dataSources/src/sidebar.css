@@ -1,0 +1,8 @@
+.dataSources-sidebar .components-panel__row{
+    display:block;
+}
+.dataSources-sidebar button{
+    display:block;
+    margin-bottom:10px;
+    width:100%;
+}

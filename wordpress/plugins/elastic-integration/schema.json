@@ -1,0 +1,140 @@
+{
+  "mappings": {
+    "properties": {
+      "ID": {
+        "type": "integer"
+      },
+      "suggest" : {
+        "type" : "completion"
+      },
+      "post_title": {
+        "type": "text",
+        "store": true
+      },
+      "post_content": {
+        "type": "text",
+        "store": true
+      },
+      "post_excerpt": {
+        "type": "text",
+        "store": true
+      },
+      "post_status": {
+        "type": "keyword"
+      },
+      "post_type": {
+        "type": "keyword",
+        "store": true
+      },
+      "post_name": {
+        "type": "keyword"
+      },
+      "post_parent": {
+        "type": "integer"
+      },
+      "post_date": {
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss",
+        "store": true
+      },
+      "menu_order": {
+        "type": "integer"
+      },
+      "likes": {
+        "type": "integer"
+      },
+      "post_meta": {
+        "type": "nested",
+        "properties": {
+          "meta_key": {
+            "type": "keyword"
+          },
+          "meta_value": {
+            "type": "text"
+          }
+        }
+      },
+      "categories": {
+        "type": "nested",
+        "properties": {
+          "term_id": {
+            "type": "keyword"
+          },
+          "name": {
+            "type": "keyword"
+          },
+          "slug": {
+            "type": "keyword"
+          },
+          "term_group": {
+            "type": "integer"
+          },
+          "term_taxonomy_id": {
+            "type": "integer"
+          },
+          "taxonomy": {
+            "type": "keyword"
+          },
+          "description": {
+            "type": "text"
+          },
+          "parent": {
+            "type": "integer"
+          }
+        }
+      },
+      "thumbnail": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "src": {
+            "type": "text"
+          },
+          "sizes": {
+            "type": "nested"
+          },
+          "url": {
+            "type": "text"
+          },
+          "colors": {
+            "type": "text"
+          }
+        }
+      },
+      "author": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "user_nicename": {
+            "type": "keyword"
+          },
+          "user_email": {
+            "type": "keyword"
+          },
+          "user_registered": {
+            "type": "date",
+            "format": "yyyy-MM-dd HH:mm:ss"
+          },
+          "display_name": {
+            "type": "keyword"
+          }
+        }
+      },
+      "blocks": {
+        "type": "object"
+      },
+      "related": {
+        "type": "nested",
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

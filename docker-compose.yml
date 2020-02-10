@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 
 services:
   db:
@@ -8,36 +8,191 @@ services:
       - ./my.cnf:/etc/mysql/conf.d/low_mem.cnf
       - database:/var/lib/mysql
     restart: unless-stopped
-    networks: 
-      - web
-    env_file: 
-      - .env
-    labels: 
+    networks:
+      - internal
+    env_file:
+      - ./env/mysql.env
+    labels:
       - "traefik.enable=false"
   wordpress:
     depends_on:
       - db
     image: "wordpress:${WORDPRESS_VERSION}"
-    networks: 
+    networks:
       - web
+      - internal
     volumes:
+      - wpdata:/var/www/html
       - ./wordpress:/var/www/html/wp-content
       - ./apache.conf:/etc/apache2/sites-enabled/000-default.conf
       - ./.htaccess:/var/www/html/.htaccess
     restart: unless-stopped
-    env_file: 
-      - .env
+    env_file:
+      - ./env/wordpress.env
+    links:
+      - elasticsearch:elasticsearch
     labels:
       - "traefik.front.frontend.rule=Host:${HOST};PathPrefix:/backend"
       - "traefik.port=80"
       - "traefik.enable=true"
       - "traefik.passHostHeader=true"
       - "traefik.frontend.entryPoints=http,https"
+      - "traefik.docker.network=web"
+      - "traefik.tags=${HOST}"
+  graph:
+    image: node:${NODE_VERSION}
+    working_dir: "/app"
+    depends_on:
+      - db
+    networks:
+      - web
+      - internal
+    links:
+      - wordpress
+      - db
+    env_file:
+      - ./env/wordpress.env
+      - ./env/graph.env
+    environment:
+      - "NODE_ENV=${ENVIRONMENT}"
+      - "HOSTNAME=${HOST}"
+    volumes:
+      - ./backend:/app
+      - ./wordpress/themes/zero/acf-json:/acfSchema:ro
+    restart: unless-stopped
+    command: bash -c "yarn && yarn run start"
+    labels:
+      - "traefik.frontend.rule=Host:${HOST};PathPrefix:/graphql,/socket"
+      - "traefik.port=4000"
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.passHostHeader=true"
+      - "traefik.frontend.entryPoints=http,https"
+      - "traefik.tags=${HOST}"
+  frontend:
+    image: node:${NODE_VERSION}
+    working_dir: "/app"
+    depends_on:
+      - graph
+    links:
+      - traefik:docker.local
+    networks:
+      - web
+      - internal
+    environment:
+      - "NODE_ENV=${ENVIRONMENT}"
+      - "SOCKET_URL=wss://${HOST}/socket"
+      - "GRAPH_URL=https://${HOST}/graphql"
+      - "npm_package_name=${SITE_TITLE}"
+      - "NODE_TLS_REJECT_UNAUTHORIZED=0"
+      - "SOJUZ_PROJECT=${SOJUZ_PROJECT}"
+    volumes:
+      - ./frontend:/app
+      - ./project:/project
+    restart: unless-stopped
+    command: bash -c "yarn && yarn build && yarn start"
+    labels:
+      - "traefik.frontend.rule=Host:${HOST};"
+      - "traefik.port=3000"
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.passHostHeader=true"
+      - "traefik.frontend.entryPoints=http,https"
+      - "traefik.tags=${HOST}"
+      - "traefik.frontend.errors.bgw.backend=error-sojuz-error"
+      - "traefik.frontend.errors.bgw.query=/50x.html"
+      - "traefik.frontend.errors.bgw.status=502"
+      - "traefik.frontend.errors.nf.backend=error-sojuz-error"
+      - "traefik.frontend.errors.nf.query=/404.html"
+      - "traefik.frontend.errors.nf.status=404"
+  traefik:
+    image: traefik:1.7
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - web
+    volumes:
+      - ./traefik/${ENVIRONMENT}.toml:/traefik.toml
+      - ./traefik/ssl:/ssl
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    labels:
+      - "traefik.frontend.rule=Host:${HOST};PathPrefixStrip:/router"
+      - "traefik.frontend.auth.basic=webartisan:$$2y$$05$$dtSK0Lm6R0LrSKfMEYVGD.9tY/Od6R.f7TfJE2M6VIpQBK25xre3G"
+      - "traefik.port=8080"
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.passHostHeader=true"
+      - "traefik.frontend.entryPoints=http,https"
+      - "traefik.tags=traefiks"
+  elasticsearch:
+    build: ./elasticsearch/
+    restart: unless-stopped
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+      - ./elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    networks:
+      web:
+      internal:
+    labels:
+      - "traefik.enable=false"
+  documentation:
+    image: docimg
+    build:
+      context: ./Docker
+      dockerfile: ./documentation.Dockerfile
+    working_dir: "/app"
+    networks:
+      - web
+      - internal
+    depends_on:
+      - db
+    volumes:
+      - ./project:/app
+      - ./frontend:/frontend_app
+      - wpdata:/wordpress
+      - ./wordpress:/wordpress/wp-content
+    restart: unless-stopped
+    command: bash -c "yarn && yarn start"
+    environment:
+      - "SOJUZ_PROJECT=${SOJUZ_PROJECT}"
+    labels:
+      - "traefik.front.frontend.rule=Host:${HOST};PathPrefixStrip:/sojuz-project"
+      - "traefik.port=8010"
+      - "traefik.enable=true"
+      - "traefik.passHostHeader=true"
+      - "traefik.frontend.entryPoints=http,https"
+      - "traefik.docker.network=web"
+      - "traefik.tags=${HOST}"
+  error:
+    image: nginx:latest
+    volumes: 
+      - ./traefik/errors:/usr/share/nginx/html
+    networks: 
+      - web
+    labels: 
+      - "traefik.front.frontend.rule=Host:${HOST};PathPrefixStrip:/error"
+      - "traefik.enable=true"
+      - "traefik.backend=error"
+      - "traefik.frontend.entryPoints=http,https"
+      - "traefik.docker.network=web"
       - "traefik.tags=${HOST}"
 
+    
 volumes:
   database:
+  esdata:
+  wpdata:
 
-networks: 
+networks:
   web:
     external: true
+  internal:

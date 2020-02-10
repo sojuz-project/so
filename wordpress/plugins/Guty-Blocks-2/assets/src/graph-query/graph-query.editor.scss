@@ -1,0 +1,45 @@
+/*
+* For styles only loaded in the editor
+* These styles are actually inlined using webpack style-loader.  They are not loaded using WordPress enqueuing.
+*/
+
+.wp-block-sojuz-graph-query {
+  background-color: #fcfcfc;
+  color: #000;
+  margin: 0 auto;
+  max-width: 740px;
+  padding: 2rem;
+  border:1px dashed #ccc;
+}
+.wp-block-sojuz-graph-query.align-full{
+  max-width:70vw;
+  .wp-block{
+    max-width: 68vw;
+  }
+}
+
+
+
+
+.components-panel{
+  .plain-text-code {
+    tab-size: 2;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    resize: none;
+    font-family: monospace;
+    min-height: 100px;
+    color: #cfd8cf;
+    background-color: #333;
+    padding:3px;
+  }
+  // .plain-text-code::selection{
+  //   color: #3ee63e;
+  // }
+   .plain-text-code:focus{
+    color: #3ee63e;
+  }
+  label{
+    line-height: 28px;
+  }
+}
