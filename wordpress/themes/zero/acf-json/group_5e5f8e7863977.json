@@ -1,0 +1,92 @@
+{
+    "key": "group_5e5f8e7863977",
+    "title": "Work space filters minimal",
+    "fields": [
+        {
+            "key": "field_5e5f8e85818c9",
+            "label": "Search",
+            "name": "search",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "w-50",
+                "id": ""
+            },
+            "hidden": 0,
+            "readonly": 0,
+            "default_value": "",
+            "placeholder": "Search",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5e5f8ea0818ca",
+            "label": "City",
+            "name": "city",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "w-25",
+                "id": ""
+            },
+            "hidden": 0,
+            "readonly": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5e5f8ead818cb",
+            "label": "Activity",
+            "name": "activity",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "w-25",
+                "id": ""
+            },
+            "hidden": 0,
+            "readonly": 0,
+            "taxonomy": "category",
+            "field_type": "checkbox",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "18"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "action": "false",
+    "search_type": "",
+    "modified": 1583320799
+}

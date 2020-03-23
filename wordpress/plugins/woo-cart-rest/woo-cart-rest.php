@@ -37,7 +37,8 @@ function prepare_cart_session() {
 		}
 
 		WC()->session = new $session_class();
-		WC()->session->init();
+    WC()->session->init();
+    WC()->customer = new WC_Customer();
   }
   include_once WC_ABSPATH . 'includes/wc-cart-functions.php';
   include_once WC_ABSPATH . 'includes/wc-notice-functions.php';

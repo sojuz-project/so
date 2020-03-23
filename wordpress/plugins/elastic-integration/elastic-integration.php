@@ -7,13 +7,13 @@
  * Author URI:      https://dmowsk.it
  * Text Domain:     elastic-integration
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         1.0
  * Requires at least:4.0
  * Tested up to:     4.0
  *
  * @package WordPress
  * @author Maciej Dmowski
- * @since 1.0.0
+ * @since 1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -23,8 +23,24 @@ include 'inc/elasticsearch.php';
 
 function setup_plugin() {
   $schema = json_decode(file_get_contents(__DIR__.'/schema.json'), ARRAY_A);
-  elasticsearch(false, 'sojuz', 'DELETE');
-  elasticsearch($schema, 'sojuz', 'PUT');
+  $langs = array_keys(apply_filters( 'wpml_active_languages', [] ));
+  $default = apply_filters( 'wpml_default_language', null );
+
+  if (!count($langs)) $langs[] = '';
+  foreach($langs as $lang) {
+    elasticsearch($schema, ($default == $lang)? '' : $lang, 'PUT');
+  }
   sync_index();
 }
 register_activation_hook( __FILE__, 'setup_plugin' );
+
+function cleanup_indexes() {
+  $langs = array_keys(apply_filters( 'wpml_active_languages', [] ));
+  $default = apply_filters( 'wpml_default_language', null );
+
+  if (!count($langs)) $langs[] = '';
+  foreach($langs as $lang) {
+    elasticsearch(false, ($default == $lang)? '' : $lang, 'DELETE');
+  }
+}
+register_deactivation_hook( __FILE__, 'cleanup_indexes' );

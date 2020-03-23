@@ -1,6 +1,8 @@
 <?php
 namespace Imagify\Imagifybeat;
 
+use Imagify_Requirements;
+
 defined( 'ABSPATH' ) || die( 'Cheatin’ uh?' );
 
 /**
@@ -66,18 +68,13 @@ class Actions {
 			return $response;
 		}
 
-		$is_blocked    = \Imagify_Requirements::is_imagify_blocked();
-		$is_api_up     = \Imagify_Requirements::is_api_up();
-		$is_key_valid  = \Imagify_Requirements::is_api_key_valid();
-		$is_over_quota = \Imagify_Requirements::is_over_quota();
-
 		$response[ $imagifybeat_id ] = [
-			'curl_missing'          => ! \Imagify_Requirements::supports_curl(),
-			'editor_missing'        => ! \Imagify_Requirements::supports_image_editor(),
-			'external_http_blocked' => $is_blocked,
-			'api_down'              => $is_blocked || ! $is_api_up,
-			'key_is_valid'          => ! $is_blocked && $is_api_up && $is_key_valid,
-			'is_over_quota'         => ! $is_blocked && $is_api_up && $is_key_valid && $is_over_quota,
+			'curl_missing'          => ! Imagify_Requirements::supports_curl(),
+			'editor_missing'        => ! Imagify_Requirements::supports_image_editor(),
+			'external_http_blocked' => Imagify_Requirements::is_imagify_blocked(),
+			'api_down'              => ! Imagify_Requirements::is_api_up(),
+			'key_is_valid'          => Imagify_Requirements::is_api_key_valid(),
+			'is_over_quota'         => Imagify_Requirements::is_over_quota(),
 		];
 
 		return $response;
@@ -157,7 +154,15 @@ class Actions {
 
 			if ( $optim_data->is_optimized() ) {
 				// Successfully optimized.
-				$full_size_data              = $optim_data->get_size_data();
+				$full_size_data                = $optim_data->get_size_data();
+				$full_size_data                = array_merge(
+					[
+						'original_size'  => 0,
+						'optimized_size' => 0,
+						'percent'        => 0,
+					],
+					$full_size_data
+				);
 				$response[ $imagifybeat_id ][] = [
 					'mediaID'                  => $media_atts['media_id'],
 					'context'                  => $media_atts['context'],

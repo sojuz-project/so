@@ -94,7 +94,7 @@ const actions = {
 
 const theStore = () => {
 	registerStore('dataSourcesStore', {
-		// eslint-disable-next-line complexity
+		
 		reducer(state = DEFAULT_STATE, action) {
 			switch (action.type) {
 				case ADD_SOURCE:

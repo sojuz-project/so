@@ -92,3 +92,11 @@ function example_dashboard_widget_function() {
 	// Display whatever it is you want to show.
 	echo "Hello World, I'm a great Dashboard Widget";
 }
+
+function acf_register_search_field() {
+	include_once(__DIR__.'/acf_field_search.php');
+	include_once(__DIR__.'/acf_field_button.php');
+}
+
+add_action('acf/include_field_types', 'acf_register_search_field'); // v5
+add_action('acf/register_fields', 	'acf_register_search_field'); // v4

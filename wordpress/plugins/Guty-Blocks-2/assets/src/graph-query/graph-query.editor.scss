@@ -7,9 +7,16 @@
   background-color: #fcfcfc;
   color: #000;
   margin: 0 auto;
-  max-width: 740px;
-  padding: 2rem;
-  border:1px dashed #ccc;
+  padding: 2rem 0.2rem 0.2rem;
+  // border:1px dashed #ccc;
+   background:url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAALUlEQVQoU2NkIBIwEqmOAa7w////xoyMjGdxaUQ30ZiBgQGrYtKtJuTWoWAiAAlPBQvOq8hdAAAAAElFTkSuQmCC
+    ) repeat;
+    &>.block-editor-inner-blocks{
+      background-color: rgba(255, 255, 255, 0.514);
+      border:1px solid #aaaaaad0;
+      padding:0 2rem;
+    }
 }
 .wp-block-sojuz-graph-query.align-full{
   max-width:70vw;
@@ -19,9 +26,15 @@
 }
 
 
-
+.components-panel__body.is-opened{
+  padding:5px;
+}
 
 .components-panel{
+  .plain-text{
+    border:1px solid #ccc;
+    padding:.5em;
+  }
   .plain-text-code {
     tab-size: 2;
     overflow: hidden;
@@ -31,7 +44,7 @@
     min-height: 100px;
     color: #cfd8cf;
     background-color: #333;
-    padding:3px;
+    padding:1em;
   }
   // .plain-text-code::selection{
   //   color: #3ee63e;

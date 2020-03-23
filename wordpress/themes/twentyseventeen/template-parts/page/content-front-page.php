@@ -36,9 +36,9 @@
 
 			<div class="entry-content">
 				<?php
-					/* translators: %s: Name of current post */
 					the_content(
 						sprintf(
+							/* translators: %s: Post title. */
 							__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
 							get_the_title()
 						)
@@ -49,4 +49,4 @@
 		</div><!-- .wrap -->
 	</div><!-- .panel-content -->
 
-</article><!-- #post-## -->
+</article><!-- #post-<?php the_ID(); ?> -->

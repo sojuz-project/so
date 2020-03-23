@@ -4,7 +4,7 @@ import { select } from '@wordpress/data';
 import { compSchema } from '../schema';
 let i = 0;
 
-// eslint-disable-next-line complexity
+
 export const traverse = ({ addSource, subscribtion: { currentBlockId } = {} }, ob, name = '') => {
 	const plural = name.slice(-1) == 's';
 	console.log('OD', ob);

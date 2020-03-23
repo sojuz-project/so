@@ -6,7 +6,7 @@
             "key": "field_5e3431967c0a7",
             "label": "Categories",
             "name": "categories",
-            "type": "taxonomy",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,14 +15,19 @@
                 "class": "",
                 "id": ""
             },
-            "taxonomy": "category",
-            "field_type": "checkbox",
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
+            "choices": {
+                "cat 1": "cat 1",
+                "cat 2": "cat 2"
+            },
+            "default_value": [
+                "cat 1"
+            ],
+            "allow_null": 0,
             "multiple": 0,
-            "allow_null": 0
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -42,5 +47,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1580478972
+    "modified": 1581502810
 }

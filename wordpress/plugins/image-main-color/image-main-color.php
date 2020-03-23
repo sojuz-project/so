@@ -9,7 +9,7 @@
  * @wordpress-plugin
  * Plugin Name: Extract primary image colors
  * Description: This plugin extracts image's primary colors. It hooks into <code>wp_generate_attachment_metadata</code> filter and extends meta with an array of main colors.
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      Maciek &lt;minimal2&gt; Dmowski
  * Author URI:  https://sojuz.team
  * License:     GPL v2 or later
@@ -27,13 +27,18 @@ require_once 'colors.inc.php';
  * @return array Modified metas
  */
 function get_colors($meta, $id) {
-  // var_dump($meta['image_meta']);
-  $settings = get_option('ipc_settings', array());
+  $defaults = [
+    'ipc_number' => 2,
+    'ipc_brightness' => true,
+    'ipc_gradients' => true,
+    'ipc_delta' => 24,
+  ];
+  $settings = array_merge($defaults, get_option('ipc_settings', array()));
   if (isset($meta['image_meta'])) {
     $uploads = wp_upload_dir()['basedir'];
     $ex=new GetMostCommonColors();
     $c = $ex->Get_Color("{$uploads}/{$meta['file']}", $settings['ipc_number'], $settings['ipc_brightness'], $settings['ipc_gradients'], $settings['ipc_delta']);
-    $meta['colors'] = [(count($c) > 1) ? []: array_shift($c)];
+    $meta['colors'] = $c;
   }
   return $meta;
 }

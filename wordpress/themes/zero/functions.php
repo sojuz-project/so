@@ -9,6 +9,8 @@
  * @since 1.0.0
  */
 
+ include_once(__DIR__.'/inc/acf-actions.php');
+
 /**
  * Zero only works in WordPress 4.7 or later.
  */
@@ -169,7 +171,7 @@ function allow_rest_regiser() {
             'callback'            => array($users_controller, 'create_item'),
             'permission_callback' => function( $request ) {
 				// For now only customers can register via REST
-                $request->set_param('roles', array('customer'));
+                $request->set_param('roles', array('subscriber'));
                 return true;
             },
             'args'                => $users_controller->get_endpoint_args_for_item_schema( WP_REST_Server::CREATABLE ),
@@ -627,6 +629,19 @@ function my_acf_prepare_field( $field ) {
 add_filter('acf/prepare_field/key=field_5e15e704e4154', 'my_acf_prepare_field');
 
 function retrive_acf_schema() {
+	if (!$_REQUEST['id']) {
+		$args = [
+			'post_type' => 'acf-field-group',
+			'posts_per_page' => -1
+		];
+		$q = new WP_Query($args);
+		$a = [];
+		foreach ($q->posts as $post) {
+			$a[$post->post_name] = $post->post_title;
+		}
+		wp_send_json_success($a);
+		die;
+	}
 	wp_send_json_success(acf_get_fields($_REQUEST['id']));
 	die;
 }
@@ -686,8 +701,11 @@ function hook_custom_ajax_actions() {
 	foreach($actions as $type => $group) {
 		if ('Built in' == $type) continue;
 		foreach ($group as $action => $label) {
-			$glue = ('_' == substr($action, 0, 1)) ? 'nopriv_': '';
-			$key = "wp_ajax_{$glue}{$action}";
+			if ('_' == substr($action, 0, 1)) {
+				$key = "wp_ajax_nopriv_{$action}";
+				add_action($key, 'handle_acf_action');
+			}
+			$key = "wp_ajax_{$action}";
 			add_action($key, 'handle_acf_action');
 		}
 	}
@@ -695,26 +713,105 @@ function hook_custom_ajax_actions() {
 	return $actions;
 }
 
-function _action() {
-	echo 'Simple non privileged function example for functions that start with _ char. Action should start with __';
-	die;
-}
 
-function action() {
-	echo 'Simple non privileged function example for normal functions';
-	die;
-}
 
 function add_cb_field($fg) {
 	$actions = hook_custom_ajax_actions();
-	// foreach array_pop(($actions) as $action)
 	acf_render_field_wrap([
 		'label'			=> __('Callback','acf'),
-		'instructions'	=> __('Action to be ttaken when form gets processed','acf'),
+		'instructions'	=> __('Action to be taken when form gets processed','acf'),
 		'type'			=> 'select',
+		'name'			=> 'acf_field_group[action]',
 		'choices'		=> $actions,
-		'value' => $fg['action']
+		'value' => (isset($fg['action'])) ? $fg['action'] : 'false'
+	]);
+	acf_render_field_wrap([
+		'label'			=> __('Callback slug','acf'),
+		'instructions'	=> __('Defines post type to to use in callback reults','acf'),
+		'type'			=> 'text',
+		'default'		=> 'post',
+		'name'			=> 'acf_field_group[search_type]',
+		'value' => $fg['search_type']
 	]);
 }
 add_action('acf/render_field_group_settings', 'add_cb_field');
 add_action('admin_init', 'hook_custom_ajax_actions');
+add_action('admin_init', function() {
+	if (class_exists('Jwt_Auth_Public')) {
+		$pub = new Jwt_Auth_Public('', 1);
+		$token = $pub->validate_token(false);
+		if (!is_wp_error($token)) {
+			wp_set_current_user ( $token->data->user->id );
+		}
+	}
+});
+add_filter('index_extra_fields_names', function ($fields,$type) {
+	// var_dump($type);	
+	$fields[] = 'post_meta_num';
+	return $fields;
+}, 10, 2);
+
+add_filter('index_extra_fields_parser', function($_, $field, $data, $post) {
+	$ret = $_;
+	switch ($field) {
+		case 'post_meta_num':
+			// echo '<pre>'; var_dump($data['post_meta']); echo '</pre>';
+			$ret = [];
+			foreach ($data['post_meta'] as $key => $value) {
+				if (is_numeric($value)) $ret[$key] = floatval($value);
+			}
+	}
+	// echo '<pre>';var_dump($field, $ret);echo '</pre>';
+	return $ret;
+}, 10, 4);
+
+add_action('acf/render_field_settings', 'add_hidden_switch');
+
+function add_hidden_switch( $field ) {
+	
+	acf_render_field_setting( $field, array(
+		'label'			=> __('Hidden?'),
+		'instructions'	=> '',
+		'name'			=> 'hidden',
+		'type'			=> 'true_false',
+		'ui'			=> 1,
+	), true);
+
+	acf_render_field_setting( $field, array(
+		'label'			=> __('Read only?'),
+		'instructions'	=> '',
+		'name'			=> 'readonly',
+		'type'			=> 'true_false',
+		'ui'			=> 1,
+	), true);
+	
+}
+
+/**
+ * Converts repeater field from multipple metas into array
+ *
+ * @param Sring $field Name of the repeater field
+ * @param array $meta array of metas
+ * @return array Parsed repeater meta
+ */
+function lparse_acf_repeater($field, $meta) {
+	$rep = [];
+	$keys = array_keys($meta);
+	foreach ($keys as $key) {
+		$matches = [];
+		preg_match("/^{$field}_(\d+)_(.+)/", $key, $matches);
+		if (count($matches)) {
+					$rep[$matches[1]][$matches[2]] = $meta[$key];
+			}
+	}
+	return $rep;
+}
+
+function parse_repeater($value, $post_id, $field) {
+	$meta = get_post_custom($post_id);
+	array_walk( $meta, 'flatten_meta_fields' );
+	$parsed = lparse_acf_repeater($field['name'], $meta);
+	update_post_meta($post_id, "{$field['name']}_repeater", $parsed);
+	return $value;
+}
+add_filter('acf/update_value/type=repeater', 'parse_repeater', 20, 3);

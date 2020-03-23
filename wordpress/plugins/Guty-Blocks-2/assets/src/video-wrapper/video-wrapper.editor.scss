@@ -1,0 +1,58 @@
+/*
+* For styles only loaded in the editor
+* These styles are actually inlined using webpack style-loader.  They are not loaded using WordPress enqueuing.
+*/
+
+.wp-block-sojuz-video-wrapper {
+  background-color: #fcfcfc;
+  color: #000;
+  margin: 0 auto;
+  padding: 2rem 0.2rem 0.2rem;
+  // border:1px dashed #ccc;
+   background:url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAALUlEQVQoU2NkIBIwEqmOAa7w////xoyMjGdxaUQ30ZiBgQGrYtKtJuTWoWAiAAlPBQvOq8hdAAAAAElFTkSuQmCC
+    ) repeat;
+    &>.block-editor-inner-blocks{
+      background-color: rgba(255, 255, 255, 0.514);
+      border:1px solid #aaaaaad0;
+      padding:0 2rem;
+    }
+}
+.wp-block-sojuz-video-wrapper.align-full{
+  max-width:70vw;
+  .wp-block{
+    max-width: 68vw;
+  }
+}
+
+
+.components-panel__body.is-opened{
+  padding:5px;
+}
+
+.components-panel{
+  .plain-text{
+    border:1px solid #ccc;
+    padding:.5em;
+  }
+  .plain-text-code {
+    tab-size: 2;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    resize: none;
+    font-family: monospace;
+    min-height: 100px;
+    color: #cfd8cf;
+    background-color: #333;
+    padding:1em;
+  }
+  // .plain-text-code::selection{
+  //   color: #3ee63e;
+  // }
+   .plain-text-code:focus{
+    color: #3ee63e;
+  }
+  label{
+    line-height: 28px;
+  }
+}

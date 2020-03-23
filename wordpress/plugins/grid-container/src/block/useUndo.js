@@ -5,7 +5,7 @@ export const useUndo = ({ setAttributes, attributes }) => {
 	const [index, setIndex] = useState(0);
 
 	useEffect(() => {
-		// eslint-disable-next-line complexity
+		
 		const onKeyDown = ({ keyCode, ctrlKey, shiftKey }) => {
 			if (ctrlKey && keyCode == 90) {
 				if (!shiftKey && index > 0) {

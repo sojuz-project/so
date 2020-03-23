@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 const { addFilter } = wp.hooks;
 const { __ } = wp.i18n;
 const { InspectorControls, PlainText } = wp.editor;
@@ -15,10 +16,14 @@ const filterCoreImage = (settings) => {
         type: 'string',
         default: '',
       },
+      figureMinHeight: {
+        type: 'string',
+        default: '',
+      },
     },
     edit(props) {
       const {
-        attributes: { imageSourceMap },
+        attributes: { imageSourceMap, figureMinHeight },
         setAttributes,
       } = props;
       // imageFromMeta
@@ -37,6 +42,12 @@ const filterCoreImage = (settings) => {
                 className="plain-text"
                 value={imageSourceMap}
                 onChange={(imageSourceMap) => setAttributes({ imageSourceMap })}
+              />
+              <label>Figure min height</label>
+              <PlainText
+                className="plain-text"
+                value={figureMinHeight}
+                onChange={(figureMinHeight) => setAttributes({ figureMinHeight })}
               />
             </PanelBody>
           </InspectorControls>

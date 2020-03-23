@@ -1,0 +1,1 @@
+console.log('graph-query: This runs only in the view.')
