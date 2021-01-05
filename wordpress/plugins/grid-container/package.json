@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@wordpress/block-editor": "^3.2.1",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "cgb-scripts": "1.18.1"
   }
 }
